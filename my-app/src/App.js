@@ -1,7 +1,6 @@
 import logo from './FGN-removebg-preview.png';
 import './App.css';
-
-
+import Forum from './Forum';
 
 function App() {
   return (
