@@ -5,6 +5,8 @@ my-app/node_modules
 my-app/.pnp
 my-app/.pnp.js
 
+backend/venv
+
 # testing
 my-app/coverage
 
