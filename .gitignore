@@ -6,6 +6,7 @@ my-app/.pnp
 my-app/.pnp.js
 
 backend/venv
+backend/__pycache__
 
 # testing
 my-app/coverage
