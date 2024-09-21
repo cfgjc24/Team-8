@@ -1,7 +1,8 @@
 from email.mime.text import MIMEText
+import smtplib
 
 
-SEND_EMAIL = False  # Change to True to enable actual email sending
+SEND_EMAIL = False  # Change to True to enable actual email sending for non profit
 
 def send_admin_notification(subject, body):
     msg = MIMEText(body)
