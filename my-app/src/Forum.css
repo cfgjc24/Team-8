@@ -117,4 +117,17 @@
   .reply-form button:hover {
     background-color: #00325a;
   }
+
+  /* Styling for category heading */
+.category-heading {
+  color: #007bff; /* Blue color */
+  text-decoration: underline;
+  cursor: pointer; /* shows that it's clickable */
+  transition: color 0.3s ease;
+}
+
+.category-heading:hover {
+  color: #0056b3; /* Darker blue on hover */
+  text-decoration: underline;
+}
   
