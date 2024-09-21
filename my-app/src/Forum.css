@@ -59,7 +59,18 @@
     color: #004977;
     margin-bottom: 10px;
   }
-  
+
+  /* Style for the question textarea */
+.question-textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical; /* Allow vertical resizing */
+  box-sizing: border-box; /* makes it so the padding is in the element's total width and height */
+}
   /* Replies */
   .replies {
     margin-top: 10px;
