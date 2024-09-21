@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import logo from './profilepic.png';  
 
 const EditProfile = () => {
     const [profile, setProfile] = useState({
