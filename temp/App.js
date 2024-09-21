@@ -1,7 +1,6 @@
 import logo from './FGN-removebg-preview.png';
 import './App.css';
 
-
 function App() {
   return (
     <div className="App">
@@ -16,7 +15,7 @@ function App() {
           <button className="App-button">Admin</button>
         </div>
         <div className="App-footer">
-          <button className="button">Don't have an account? Sign up</button>
+          <a href="/ SignUpForm.js" className="button">Don't have an account? Sign up here!</a>
         </div>
       </header>
     </div>
