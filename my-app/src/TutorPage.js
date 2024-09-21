@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './TutorPage.css';
 
 function TutorsPage() {
+  // Array of student objects with their names and descriptions
   const students = [
     { name: 'Student 1', description: 'Description for Student 1' },
     { name: 'Student 2', description: 'Description for Student 2' },
@@ -11,12 +12,17 @@ function TutorsPage() {
     // Add more students as needed
   ];
 
+  // State to keep track of the current student's index for the slideshow
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Automatically cycle through students every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
+      // Increment the index, wrapping around when reaching the end of the list
       setCurrentIndex((prevIndex) => (prevIndex + 1) % students.length);
     }, 3000); // Adjust timing (3 seconds per slide)
+    
+    // Cleanup the interval when the component unmounts
     return () => clearInterval(interval);
   }, [students.length]);
 
@@ -30,8 +36,11 @@ function TutorsPage() {
               className="student"
               key={index}
               style={{
-                transform: `translateX(${(index - currentIndex) * 220}px)`, // Control student positioning
-                opacity: index === currentIndex ? 1 : 0.5, // Fade out inactive students
+                // Adjust horizontal position of the students based on currentIndex
+                transform: `translateX(${(index - currentIndex) * 220}px)`,
+                // Reduce opacity for inactive students
+                opacity: index === currentIndex ? 1 : 0.5,
+                // Smooth transition for both position and opacity changes
                 transition: 'transform 0.5s ease, opacity 0.5s ease'
               }}
             >

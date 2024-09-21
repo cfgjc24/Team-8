@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ReactDOM from 'react-dom/client';
 
+/* declaring the states */
 function MyForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -15,9 +16,10 @@ function MyForm() {
   }
 
   return (
+    /* Buttons of the  */
     <form>
     <div style={{ marginBottom: '1rem' }}>
-        <label>FGI Attendance Form</label>
+        <label>FGI Attendance Form</label> 
       </div>
 
       <div style={{ marginBottom: '1rem' }}>

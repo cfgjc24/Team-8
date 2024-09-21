@@ -1,0 +1,99 @@
+/* General styling for the attendance container */
+.attendance-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures the form is vertically centered */
+    background-color: #f0f8ff; /* Light blue background */
+    padding: 20px;
+}
+
+/* Styling for the attendance form itself */
+.attendance-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+}
+
+/* Header styles */
+.attendance-header h2 {
+    color: #0044cc; /* Blue for the main heading */
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.attendance-header p {
+    color: #000000; /* Black for the welcome message */
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Styling for each label */
+.attendance-label {
+    font-size: 16px;
+    color: #000000; /* Black text for labels */
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Styling for the input fields */
+.attendance-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Button styling */
+.attendance-button {
+    background-color: #0044cc; /* Blue background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.attendance-button:hover {
+    background-color: #003399; /* Slightly darker blue on hover */
+}
+
+/* Styling for the radio group */
+.radio-group {
+    margin-bottom: 15px; /* Space between radio groups and the next label */
+}
+
+.radio-label {
+    margin-right: 15px; /* Space between radio buttons */
+}
+
+/* Success and error messages */
+.success, .error {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+}
+
+.success {
+    background-color: #d4edda; /* Light green for success */
+    color: #155724; /* Dark green text */
+}
+
+.error {
+    background-color: #f8d7da; /* Light red for error */
+    color: #721c24; /* Dark red text */
+}

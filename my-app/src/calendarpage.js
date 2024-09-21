@@ -1,0 +1,35 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './CoursePage.css';
+import './calendarPage.css';
+import './Forum';
+import './Forum.css';
+
+export default function CalendarPage() {
+  return (
+    <div className="course-container">
+      {/* Navigation Bar */}
+      <nav className="navbar">
+        <ul className="nav-links">
+          <li><Link to="/courses" className="nav-item">Courses</Link></li>
+          <li><Link to="/calendar" className="nav-item">Calendar</Link></li>
+          <li><Link to="/opportunities" className="nav-item">Opportunities</Link></li>
+          <li><Link to="/profile" className="nav-item">Profile</Link></li>
+          <li><Link to="/Forum" className="nav-item">Forum</Link></li>
+          <li><Link to="/profile" className="nav-item">Forum</Link></li>
+        </ul>
+      </nav>
+
+      {/* Google Calendar Embedding*/}
+      <div className="calendar-container">
+        <iframe 
+          src="https://calendar.google.com/calendar/embed?src=0da9827010714f92db2eb3363349f9ba13758e296286443068fc4e579934e606%40group.calendar.google.com&ctz=America%2FNew_York" 
+          style={{ border: 'none', width: '800px', align: 'center', height: '700px' }} 
+          frameBorder="0" 
+          scrolling="no" 
+          title="Google Calendar"
+        />
+      </div>
+    </div>
+  );
+}
