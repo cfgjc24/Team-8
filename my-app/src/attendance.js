@@ -10,15 +10,18 @@ function MyForm() {
   const [school, setSchool] = useState("Select School"); 
   const [session, setSession] = useState("Select Session"); 
 
+  // State for the radio button groups
+  const [confidence, setConfidence] = useState(""); // For confidence level
+  const [belonging, setBelonging] = useState(""); // For sense of belonging
+
   const handleChange = (event) => {
     setSchool(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission logic here
     alert('Form submitted!');
-    console.log({ name, email, difficult, experience, additional, school, session });
+    console.log({ name, email, difficult, experience, additional, school, session, confidence, belonging });
   };
 
   return (
@@ -30,6 +33,7 @@ function MyForm() {
       <div style={{ marginBottom: '1rem' }}>
         <label>This is a required weekly attendance form to be filled out by the student.</label>
       </div>
+
       <div style={{ marginBottom: '1rem' }}>
         <label>Enter your full name :
           <input
@@ -76,7 +80,7 @@ function MyForm() {
           <option value="On Track Academy">On Track Academy</option>
         </select>
       </div>
-
+ 
       <div style={{ marginBottom: '1rem' }}>
         <label>What was the most difficult / confusing part of this lesson? :
           <input
@@ -85,6 +89,36 @@ function MyForm() {
             onChange={(e) => setDifficult(e.target.value)}
           />
         </label>
+      </div>
+
+      <div style={{ marginBottom: '1rem' }}>
+        <label>How confident do you feel about the topics covered today? </label>
+        {[1, 2, 3, 4].map((num) => (
+          <label key={num}>
+            <input
+              type="radio"
+              value={num}
+              checked={confidence === String(num)}
+              onChange={(e) => setConfidence(e.target.value)}
+            />
+            {num}
+          </label>
+        ))}
+      </div>
+
+      <div style={{ marginBottom: '1rem' }}>
+        <label>I feel a strong sense of belonging, community, and bond with the students and tutors in my group. </label>
+        {[1, 2, 3, 4].map((num) => (
+          <label key={num}>
+            <input
+              type="radio"
+              value={num}
+              checked={belonging === String(num)}
+              onChange={(e) => setBelonging(e.target.value)}
+            />
+            {num}
+          </label>
+        ))}
       </div>
 
       <div style={{ marginBottom: '1rem' }}>
@@ -112,6 +146,7 @@ function MyForm() {
   );
 }
 
+// Optional: Add some basic styling
 const buttonStyle = {
   padding: '10px 10px',
   fontSize: '16px',
