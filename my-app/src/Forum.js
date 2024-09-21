@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import './Forum.css'; 
 
-// forum component
 const Forum = () => {
   const [posts, setPosts] = useState([]);
   const [newQuestion, setNewQuestion] = useState("");
@@ -57,6 +57,17 @@ const Forum = () => {
 
   return (
     <div className="forum-container">
+
+      {/* Navigation Bar */}
+      <nav className="navbar">
+        <ul className="nav-links">
+          <li><Link to="/courses" className="nav-item">Courses</Link></li>
+          <li><Link to="/calendar" className="nav-item">Calendar</Link></li>
+          <li><Link to="/opportunities" className="nav-item">Opportunities</Link></li>
+          <li><Link to="/profile" className="nav-item">Profile</Link></li>
+        </ul>
+      </nav>
+
       <h1 className="forum-title">Forum</h1>
 
       {/* Form for posting new questions */}

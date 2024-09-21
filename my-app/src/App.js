@@ -4,13 +4,13 @@ import './App.css';  // Your CSS file
 import './CoursePage.css';
 import './oppertunities.css';
 import './calendarPage.css';
+import './Forum.css';
 import LoginPage from './LoginPage';  // Login Page component
 import SignUpForm from './SignUpForm';  // Registration form component (SignUpForm)
 import CoursePage from './coursePage';
 import CalendarPage from './calendarpage';
 import Oppertunities from './oppertunities';
-
-
+import Forum from './Forum';
 
 // Home Page Component
 function HomePage() {
@@ -63,6 +63,8 @@ function App() {
         <Route path="/calendar" element={<CalendarPage/>} />
 
         <Route path="/oppertunities" element={<Oppertunities/>} />
+
+        <Route path="/Forum" element={<Forum/>} />
 
       </Routes>
     </Router>
