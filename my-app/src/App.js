@@ -2,9 +2,11 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import logo from './FGN-removebg-preview.png';  // Your logo
 import './App.css';  // Your CSS file
 import './CoursePage.css';
+import './oppertunities.css';
 import LoginPage from './LoginPage';  // Login Page component
 import SignUpForm from './SignUpForm';  // Registration form component (SignUpForm)
 import CoursePage from './coursePage';
+import Oppertunities from './oppertunities';
 
 
 
@@ -23,9 +25,6 @@ function HomePage() {
           </Link>
           <Link to="/login" className="App-button">
             <button className="App-button">Tutor</button>
-          </Link>
-          <Link to="/login" className="App-button">
-            <button className="App-button">Admin</button>
           </Link>
           <Link to="/courses" className="App-button">
             <button className="App-button">Courses</button>
@@ -57,6 +56,9 @@ function App() {
 
           {/*Temporary CoursePage*/}
           <Route path="/courses" element={<CoursePage />} />
+
+          <Route path="/oppertunities" element={<Oppertunities/>} />
+
 
       </Routes>
     </Router>

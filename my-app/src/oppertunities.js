@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './oppertunities.css';
 
 
@@ -7,7 +6,10 @@ function oppertunities() {
     
     <div id="projects">
         <div class="container">
-            <h1 class="sub-title">Opportunities</h1>
+            <div className="container">
+  <h1 className="sub-title">Opportunities</h1>
+</div>
+
             <div class="work-list">
                 <div class="work">
                   
@@ -25,7 +27,7 @@ function oppertunities() {
                         <h3>Internships</h3>
                         <p>Finance related Internships</p>
                         <a href="https://www.ziprecruiter.com/Jobs/High-School-Finance-Intern/-in-New-York,NY" target="_blank" rel="noopener noreferrer" className="button">
-Internships Oppertunities
+Internships Opportunities
               </a>
                          </div>
                 </div>
@@ -35,7 +37,7 @@ Internships Oppertunities
                         <h3>Additional Courses </h3>
                         <p>Finance Related courses</p>
                         <a href="hhttps://www.khanacademy.org/college-careers-more/financial-literacy" target="_blank" rel="noopener noreferrer" className="button">
-               Meeting Oppertunities
+               Meeting Opportunities
               </a>
                     </div>
                 </div>
