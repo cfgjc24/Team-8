@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import './LoginPage.css';  // Import the CSS file
+import './tutorSignIn.css';  // Import the CSS file
 
 export default function tutorSignIn() {
 
