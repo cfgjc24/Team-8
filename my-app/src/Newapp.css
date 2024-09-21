@@ -1,0 +1,62 @@
+.header{
+    position: fixed;
+    top:0;
+    left:0;
+    width:80%;
+    padding: 20px 10%;
+    background: #004977;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    z-index: 500;
+    
+}
+.home{
+    font-size:34px;
+    color:#fff;
+    font-weight: 300;
+    font-family: "Cormorant Garamond";
+    text-decoration: none;
+}
+.courselink{
+    position: relative;
+    font-size:20px;
+    color:#fff;
+    font-weight:400;
+    margin:35px;
+    text-decoration: none;
+}
+.courselink:hover {
+    background-color: lightblue;
+    color: rgb(24, 72, 130);
+    cursor: pointer;
+  }
+.calendarlink{
+    position: relative;
+    font-size:20px;
+    color:#fff;
+    font-weight:400;
+    margin:35px;
+    text-decoration: none;
+}
+.calendarlink:hover {
+    background-color: lightblue;
+    color: rgb(24, 72, 130);
+    cursor: pointer;
+  }
+
+.opportunitylink{
+    position: relative;
+    font-size:20px;
+    color:#fff;
+    font-weight:400;
+    margin:35px;
+    text-decoration: none;
+}
+.opportunitylink:hover {
+    background-color: lightblue;
+    color: rgb(24, 72, 130);
+    cursor: pointer;
+  }
+
+
