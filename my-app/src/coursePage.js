@@ -1,11 +1,5 @@
-import React from 'react';
+import React from "react";
 import { Link } from 'react-router-dom';
-import './CoursePage.css';
-import './oppertunities.css';
-import './oppertunities';
-import './calendarpage';
-import './calendarPage.css';
-import './Forum';
 import './Forum.css';
 
 export default function CoursePage() {
