@@ -17,12 +17,15 @@
   }
   
   .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
   
   .form-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
   }
   
   .form-group input, .form-group textarea {
