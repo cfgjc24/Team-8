@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS students (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            first_name TEXT NOT NULL,
+            last_name TEXT NOT NULL,
+            age INTEGER NOT NULL,
+            email TEXT NOT NULL UNIQUE,
+            dob TIMESTAMP NOT NULL
+        
+        );
+
+        Base = declarative_base()
+

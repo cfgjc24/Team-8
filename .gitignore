@@ -8,6 +8,8 @@ my-app/.pnp.js
 backend/venv
 backend/__pycache__
 
+.venv
+
 # testing
 my-app/coverage
 
