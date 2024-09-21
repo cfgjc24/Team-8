@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './oppertunities.css';
 
 
-export default function oppertunities() {
+function oppertunities() {
   return (
     
     <div id="projects">
@@ -25,7 +25,7 @@ export default function oppertunities() {
                         <h3>Internships</h3>
                         <p>Finance related Internships</p>
                         <a href="https://www.ziprecruiter.com/Jobs/High-School-Finance-Intern/-in-New-York,NY" target="_blank" rel="noopener noreferrer" className="button">
-                    Internships Opportunities
+Internships Oppertunities
               </a>
                          </div>
                 </div>
@@ -35,7 +35,7 @@ export default function oppertunities() {
                         <h3>Additional Courses </h3>
                         <p>Finance Related courses</p>
                         <a href="hhttps://www.khanacademy.org/college-careers-more/financial-literacy" target="_blank" rel="noopener noreferrer" className="button">
-               Meeting Opportunities
+               Meeting Oppertunities
               </a>
                     </div>
                 </div>
@@ -44,3 +44,5 @@ export default function oppertunities() {
     </div>
   );
 }
+
+export default oppertunities;
