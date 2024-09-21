@@ -3,10 +3,12 @@ import logo from './FGN-removebg-preview.png';  // Your logo
 import './App.css';  // Your CSS file
 import './CoursePage.css';
 import './oppertunities.css';
+import './calendarPage.css';
 import LoginPage from './LoginPage';  // Login Page component
 import SignUpForm from './SignUpForm';  // Registration form component (SignUpForm)
 import CoursePage from './coursePage';
 import CalendarPage from './calendarpage';
+import Oppertunities from './oppertunities';
 
 
 
@@ -25,9 +27,6 @@ function HomePage() {
           </Link>
           <Link to="/login" className="App-button">
             <button className="App-button">Tutor</button>
-          </Link>
-          <Link to="/calendarpage" className="App-button">
-            <button className="App-button">Admin</button>
           </Link>
           <Link to="/courses" className="App-button">
             <button className="App-button">Courses</button>
@@ -61,7 +60,9 @@ function App() {
           <Route path="/courses" element={<CoursePage />} />
 
         {/*Temporary CalendarPage*/}
-        <Route path="/calendarpage" element={<CalendarPage/>} />
+        <Route path="/calendar" element={<CalendarPage/>} />
+
+        <Route path="/oppertunities" element={<Oppertunities/>} />
 
       </Routes>
     </Router>

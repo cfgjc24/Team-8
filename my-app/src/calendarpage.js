@@ -10,7 +10,7 @@ export default function CalendarPage() {
       <nav className="navbar">
         <ul className="nav-links">
           <li><Link to="/courses" className="nav-item">Courses</Link></li>
-          <li><Link to="/caleddar" className="nav-item">Calendar</Link></li>
+          <li><Link to="/calendar" className="nav-item">Calendar</Link></li>
           <li><Link to="/opportunities" className="nav-item">Opportunities</Link></li>
           <li><Link to="/profile" className="nav-item">Profile</Link></li>
         </ul>
