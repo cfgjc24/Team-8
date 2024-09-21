@@ -37,6 +37,18 @@ const Forum = () => {
           onChange={(e) => setNewQuestion(e.target.value)}
           required
         />
+        {/* Dropdown for selecting a category */}
+        <select
+          value={newCategory}
+          onChange={(e) => setNewCategory(e.target.value)}
+          className="category-select"
+        >
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
         <button type="submit">Post Question</button>
       </form>
 
