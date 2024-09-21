@@ -5,7 +5,7 @@ import './oppertunities.css';
 import './oppertunities';
 import './calendarpage';
 import './calendarPage.css';
-
+import './Forum';
 
 export default function CoursePage() {
   return (
@@ -16,8 +16,8 @@ export default function CoursePage() {
           <li><Link to="/courses" className="nav-item">Courses</Link></li>
           <li><Link to="/calendar" className="nav-item">Calendar</Link></li>
           <li><Link to="/oppertunities" className="nav-item">Opportunities</Link></li>
-          <li><Link to="/profile" className="nav-item">Profile</Link></li>
-          <li><Link to="/profile" className="nav-item">Form</Link></li>
+          <li><Link to="/Profile" className="nav-item">Profile</Link></li>
+          <li><Link to="/Forum" className="nav-item">Forum</Link></li>
         </ul>
       </nav>
 
