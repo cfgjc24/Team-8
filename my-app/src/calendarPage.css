@@ -6,16 +6,16 @@
     background-color: #f0f8ff; /* Light blue background */
   }
 
-  /* Google Calendar Embed */
+  /* Google Calendar Embedding Container */
   .calendar-container {
-    width: 100%; /* Full width */
+    width: 100%;
     display: flex;
-    justify-content: center; /* Center the calendar */
-    margin-top: 10px; /* Space below the navbar */
-    height: calc(100vh - 80px); /* Fill the rest of the page */
-    background: #f0f8ff; /* Light background */
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    overflow: hidden; /* Clip overflow for rounded corners */
+    justify-content: center; 
+    margin-top: 10px; 
+    height: calc(100vh - 80px);
+    background: #f0f8ff; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
   }
   

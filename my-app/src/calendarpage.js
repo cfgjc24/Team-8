@@ -20,7 +20,7 @@ export default function CalendarPage() {
         </ul>
       </nav>
 
-      {/* Google Calendar Embed */}
+      {/* Google Calendar Embedding*/}
       <div className="calendar-container">
         <iframe 
           src="https://calendar.google.com/calendar/embed?src=f9e0eee7c5ed8ffcc2be23d9bc4a83b87124e39b3d6cac267307ad1f77d9f809%40group.calendar.google.com&ctz=America%2FNew_York" 
