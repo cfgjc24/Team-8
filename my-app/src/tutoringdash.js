@@ -1,8 +1,8 @@
 import logo from './logo.svg';
-import './App.css';
+import './tutorcss.css';
 
 
-function tutors() {
+function tutoringdash() {
   return (
     
     <div id="projects">
@@ -46,4 +46,4 @@ TUTOR TRAINING
   );
 }
 
-export default tutors;
+export default tutoringdash;
