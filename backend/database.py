@@ -1,21 +1,15 @@
 from sqlalchemy import create_engine, Column, Integer, String, DateTime 
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+# from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import declarative_base, sessionmaker
+from models import Student
 
 Base = declarative_base()
 
-class Student(Base):
-    __tablename__ = 'students'
-    
-    id = Column(Integer, primary_key=True)
-    first_name = Column(String, nullable=False)
-    last_name = Column(String, nullable=False)
-    age = Column(Integer, nullable=False)
-    email = Column(String, nullable=False, unique=True)
-    dob = Column(DateTime, nullable=False)
+def get_comments_for_post (post_id :int) -> any :
+    pass
 
 # Create the database engine
-engine = create_engine('sqlite:///mydatabase.sql')
+engine = create_engine('sqlite:///db.sqlite3')
 
 # Create the tables
 Base.metadata.create_all(engine)
@@ -23,14 +17,16 @@ Base.metadata.create_all(engine)
 # Create a session factory
 Session = sessionmaker(bind=engine)
 
-def insert_student(first_name, last_name, age, email, dob):
+def insert_student(first_name, last_name, age, email, dob, tutor_id):
     session = Session()
     try:
-        new_student = Student(first_name=first_name, last_name=last_name, age=age, email=email, dob=dob)
-        session.add(new_student)
+        new_student = Student(first_name=first_name, last_name=last_name, age=age, email=email, dob=dob, tutor_id=tutor_id)
+        result = session.add(new_student)
+        type(result)
         session.commit()
         return True
-    except:
+    except Exception as e:
+        print(e)
         session.rollback()
         return False
     finally:
@@ -38,8 +34,9 @@ def insert_student(first_name, last_name, age, email, dob):
 
 # Example usage:
 from datetime import datetime
-success = insert_student("Joshua", "Brown", 20, "Joshua.Brown@example.com", datetime.now())
+
+success = insert_student("Joshua", "Brown", 20, "Joshua.Brown@example.com", datetime(2004, 8, 4),4)
 if success:
     print("Student added successfully!")
 else:
-    print("Error: Could not add student to the database.")
+    print("Error: Could not add student to the database.") 

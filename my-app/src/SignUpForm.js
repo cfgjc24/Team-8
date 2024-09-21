@@ -1,5 +1,4 @@
-// Filename - SignUpForm.js
-
+import './SignUpForm.css';  // Ensure this CSS is imported
 import { useState } from "react";
 
 export default function Form() {
@@ -16,47 +15,14 @@ export default function Form() {
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
 
-    // Handling the name change
-    const handleName = (e) => {
-        setName(e.target.value);
-        setSubmitted(false);
-    };
-
-    // Handling the Date of Birth change
-    const handleDateofBirth = (e) => {
-        setDateofBirth(e.target.value);
-        setSubmitted(false);
-    };
-
-    // Handling the school change
-    const handleSchool = (e) => {
-        setSchool(e.target.value);
-        setSubmitted(false);
-    };
-
-    // Handling the email change
-    const handleEmail = (e) => {
-        setEmail(e.target.value);
-        setSubmitted(false);
-    };
-
-     // Handling the parent name change
-     const handleParentName = (e) => {
-        setParentName(e.target.value);
-        setSubmitted(false);
-    };
-
-     // Handling the parent email change
-     const handleParentEmail = (e) => {
-        setParentEmail(e.target.value);
-        setSubmitted(false);
-    };
-
-    // Handling the password change
-    const handlePassword = (e) => {
-        setPassword(e.target.value);
-        setSubmitted(false);
-    };
+    // Handling the form fields
+    const handleName = (e) => setName(e.target.value);
+    const handleDateofBirth = (e) => setDateofBirth(e.target.value);
+    const handleSchool = (e) => setSchool(e.target.value);
+    const handleEmail = (e) => setEmail(e.target.value);
+    const handleParentName = (e) => setParentName(e.target.value);
+    const handleParentEmail = (e) => setParentEmail(e.target.value);
+    const handlePassword = (e) => setPassword(e.target.value);
 
     // Handling the form submission
     const handleSubmit = (e) => {
@@ -70,107 +36,60 @@ export default function Form() {
     };
 
     // Showing success message
-    const successMessage = () => {
-        return (
-            <div
-                className="success"
-                style={{
-                    display: submitted ? "" : "none",
-                }}
-            >
-                <h1>User {name} successfully registered!!</h1>
-            </div>
-        );
-    };
+    const successMessage = () => submitted && (
+        <div className="success">
+            <h1>User {name} successfully registered!</h1>
+        </div>
+    );
 
-    // Showing error message if error is true
-    const errorMessage = () => {
-        return (
-            <div
-                className="error"
-                style={{
-                    display: error ? "" : "none",
-                }}
-            >
-                <h1>Please enter all the fields</h1>
-            </div>
-        );
-    };
+    // Showing error message
+    const errorMessage = () => error && (
+        <div className="error">
+            <h1>Please enter all the required fields</h1>
+        </div>
+    );
 
     return (
-        <div className="form">
-            <div>
-                <h1>FIRST GENERATION INVESTORS</h1>
-                <h2>Sign Up Now!</h2>
+        <div className="SUApp">
+            <div className="SUApp-form">
+                <header className="SUApp-header">
+                    <h1>FIRST GENERATION INVESTORS</h1>
+                    <h2>Sign Up Now!</h2>
+                </header>
+
+                {/* Displaying messages */}
+                <div className="messages">
+                    {errorMessage()}
+                    {successMessage()}
+                </div>
+
+                <form>
+                    <label className="SUApp-label">Name</label>
+                    <input onChange={handleName} className="SUApp-input" value={name} type="text" />
+
+                    <label className="SUApp-label">Date of Birth</label>
+                    <input onChange={handleDateofBirth} className="SUApp-input" value={dateofbirth} type="date" />
+
+                    <label className="SUApp-label">School</label>
+                    <input onChange={handleSchool} className="SUApp-input" value={school} type="text" />
+
+                    <label className="SUApp-label">Email</label>
+                    <input onChange={handleEmail} className="SUApp-input" value={email} type="email" />
+
+                    <label className="SUApp-label">Parent Name</label>
+                    <input onChange={handleParentName} className="SUApp-input" value={parentname} type="text" />
+
+                    <label className="SUApp-label">Parent Email</label>
+                    <input onChange={handleParentEmail} className="SUApp-input" value={parentemail} type="email" />
+
+                    <label className="SUApp-label">Password</label>
+                    <input onChange={handlePassword} className="SUApp-input" value={password} type="password" />
+
+                    <button onClick={handleSubmit} className="SUApp-button" type="submit">
+                        Submit
+                    </button>
+                </form>
             </div>
-
-            {/* Calling to the methods */}
-            <div className="messages">
-                {errorMessage()}
-                {successMessage()}
-            </div>
-
-            <form>
-                {/* Labels and inputs for form data */}
-                <label className="label">Name</label>
-                <input
-                    onChange={handleName}
-                    className="input"
-                    value={name}
-                    type="name"
-                />
-
-                <label className="label">Date of Birth</label>
-                <input
-                    onChange={handleDateofBirth}
-                    className="input"
-                    value={dateofbirth}
-                    type="dateofbirth"
-                />
-
-                <label className="label">School</label>
-                <input
-                    onChange={handleSchool}
-                    className="input"
-                    value={school}
-                    type="school"
-                />
-
-                <label className="label">Email</label>
-                <input
-                    onChange={handleEmail}
-                    className="input"
-                    value={email}
-                    type="parentname"
-                />
-
-                <label className="label">Parent Name</label>
-                <input
-                    onChange={handleParentName}
-                    className="input"
-                    value={parentname}
-                    type="parentname"
-                />
-                <label className="label">Parent Email</label>
-                <input
-                    onChange={handleParentEmail}
-                    className="input"
-                    value={parentemail}
-                    type="parentemail"
-                />
-
-                <label className="label">Password</label>
-                <input
-                    onChange={handlePassword}
-                    className="input"
-                    value={password}
-                    type="password"
-                />
-
-                <button onClick={handleSubmit} className="btn" type="submit">
-                    Submit
-                </button>
-            </form>
         </div>
     );
 }

@@ -1,42 +1,40 @@
-/* General styling for the form container */
-.SUApp {
+/* General styling for the login container */
+.login-container {
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Ensures the form is vertically centered */
-    background-color: #f0f8ff; /* A very light blue background */
+    background-color: #f0f8ff; /* Light blue background */
+    padding: 20px;
   }
   
-  /* Styling for the form itself */
-  .SUApp-form {
+  /* Styling for the login form itself */
+  .login-form {
     background-color: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
     width: 100%;
-    max-width: 400px; /* Keeps the form a manageable width */
-    text-align: left; /* Aligns labels and inputs to the left */
+    max-width: 400px;
+    text-align: left;
   }
   
   /* Header styles */
-  .SUApp-header {
-    margin-bottom: 20px;
-  }
-  
-  .SUApp-header h1 {
-    color: #0044cc; /* Dark blue for the main heading */
+  .login-header h2 {
+    color: #0044cc; /* Blue for the main heading */
     font-size: 24px;
+    margin-bottom: 10px;
   }
   
-  .SUApp-header h2 {
-    color: #000000; /* Black for the secondary heading */
-    font-size: 18px;
+  .login-header p {
+    color: #000000; /* Black for the welcome message */
+    font-size: 16px;
     margin-bottom: 20px;
   }
   
   /* Styling for each label */
-  .SUApp-label {
+  .login-label {
     font-size: 16px;
     color: #000000; /* Black text for labels */
     display: block;
@@ -45,7 +43,7 @@
   }
   
   /* Styling for the input fields */
-  .SUApp-input {
+  .login-input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -56,7 +54,7 @@
   }
   
   /* Button styling */
-  .SUApp-button {
+  .login-button {
     background-color: #0044cc; /* Blue background */
     color: white; /* White text */
     border: none;
@@ -67,8 +65,25 @@
     cursor: pointer;
   }
   
-  .SUApp-button:hover {
+  .login-button:hover {
     background-color: #003399; /* Slightly darker blue on hover */
+  }
+  
+  /* Link styling inside the form */
+  .login-link {
+    color: #0044cc;
+    text-decoration: none;
+  }
+  
+  .login-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Styling for the demo user information */
+  .demo-user {
+    color: #666;
+    font-size: 14px;
+    margin-top: 15px;
   }
   
   /* Success and error messages */
