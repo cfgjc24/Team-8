@@ -3,9 +3,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #f0f8ff; /* Light blue background */
   padding: 20px;
+  
 }
 
 /* Navigation Bar */

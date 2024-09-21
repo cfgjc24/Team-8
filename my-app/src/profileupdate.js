@@ -27,10 +27,8 @@ const EditProfile = () => {
 
 
    return (
-       <div className="edit-profile-container">
-
-
-       <div className="course-container">
+    <div>
+    <div>
            {/* Navigation Bar */}
            <nav className="navbar">
                <ul className="nav-links">
@@ -43,6 +41,10 @@ const EditProfile = () => {
                </ul>
            </nav>
        </div>
+       <div className="edit-profile-container">
+
+    
+       
            <h2>Edit Profile</h2>
            <form onSubmit={handleSubmit}>
                <div className="form-group">
@@ -89,6 +91,7 @@ const EditProfile = () => {
                <br></br>
                <button type="button">Logout</button>
            </form>
+       </div>
        </div>
    );
 };
