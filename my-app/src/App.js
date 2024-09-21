@@ -17,6 +17,7 @@ import { useState } from "react";
 
 
 import Forum from './Forum';
+import EditProfile from './profileupdate';
 
 // Home Page Component
 function HomePage() {
@@ -80,6 +81,7 @@ function App() {
 
         <Route path="/AttendanceQuiz" element={<AttendanceQuiz progress={progress} handleProgressData={handleProgressData}/>} />
 
+        <Route path="/profileupdate" element={<EditProfile/>} /> 
       </Routes>
     </Router>
   );
