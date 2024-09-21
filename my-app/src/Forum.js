@@ -56,17 +56,20 @@ const Forum = () => {
   };
 
   return (
+    <div>
+    {/* Navigation Bar */}
+    <nav className="navbar">
+    <ul className="nav-links">
+      <li><Link to="/courses" className="nav-item">Courses</Link></li>
+      <li><Link to="/calendar" className="nav-item">Calendar</Link></li>
+      <li><Link to="/opportunities" className="nav-item">Opportunities</Link></li>
+      <li><Link to="/profileupdate" className="nav-item">Profile</Link></li>
+    </ul>
+    </nav>
+
     <div className="forum-container">
 
-      {/* Navigation Bar */}
-      <nav className="navbar">
-        <ul className="nav-links">
-          <li><Link to="/courses" className="nav-item">Courses</Link></li>
-          <li><Link to="/calendar" className="nav-item">Calendar</Link></li>
-          <li><Link to="/opportunities" className="nav-item">Opportunities</Link></li>
-          <li><Link to="/profileupdate" className="nav-item">Profile</Link></li>
-        </ul>
-      </nav>
+      
 
       <h1 className="forum-title">Forum</h1>
 
@@ -120,6 +123,7 @@ const Forum = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };
