@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import './Forum.css';
+import './Forum.css'; 
+
+const currentUser = {
+  username: "Iris Zhang",
+  profilePicture: "https://via.placeholder.com/40", // Placeholder image, replace with actual user image
+};
 
 // forum component
 const Forum = () => {
@@ -7,6 +12,22 @@ const Forum = () => {
   const [newQuestion, setNewQuestion] = useState("");
   const [newCategory, setNewCategory] = useState("Lesson 1");
   const [selectedCategory, setSelectedCategory] = useState(""); // State to track the selected category
+
+  useEffect(() => {
+    fetch("/api/currentUser", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setCurrentUser(data); 
+      })
+      .catch((error) => {
+        console.error("Error fetching user data:", error);
+      });
+  }, []);
 
   // Categories: Lesson 1 to 7 and Capstone
   const categories = [
@@ -29,7 +50,8 @@ const Forum = () => {
         question: newQuestion,
         category: newCategory,
         replies: [],
-        date: new Date().toLocaleDateString(),  // Store the current date as a string
+        date: new Date().toLocaleDateString(),
+        user: currentUser, // Associate post with the current user
       };
       setPosts([...posts, newPost]);
       setNewQuestion("");
@@ -41,7 +63,10 @@ const Forum = () => {
   const handleAddReply = (postId, reply) => {
     setPosts(
       posts.map((post) =>
-        post.id === postId ? { ...post, replies: [...post.replies, reply] } : post
+        post.id === postId ? {
+          ...post,
+          replies: [...post.replies, { text: reply, user: currentUser }] // Add reply with user info
+        } : post
       )
     );
   };
@@ -127,8 +152,13 @@ const Post = ({ post, handleAddReply }) => {
 
   return (
     <div className="forum-post">
+      {/* Display user info along with the post */}
+      <div className="post-header">
+        <img src={post.user.profilePicture} alt={`${post.user.username}'s profile`} className="profile-picture" />
+        <span className="post-username">{post.user.username}</span>
+        <span className="post-date">Posted on: {post.date}</span>
+      </div>
       <h3>{post.question}</h3>
-      <p className="post-date">Posted on: {post.date}</p>
 
       {/* Reply form */}
       <form className="reply-form" onSubmit={handleReplySubmit}>
@@ -146,7 +176,11 @@ const Post = ({ post, handleAddReply }) => {
       <div className="replies">
         {post.replies.length > 0 ? (
           post.replies.map((reply, index) => (
-            <p key={index}>&gt; {reply}</p>
+            <div key={index} className="reply-item">
+              <img src={reply.user.profilePicture} alt={`${reply.user.username}'s profile`} className="profile-picture" />
+              <span className="reply-username">{reply.user.username}</span>
+              <p>&gt; {reply.text}</p>
+            </div>
           ))
         ) : (
           <p className="no-replies">No replies yet. Be the first to reply!</p>
