@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './tutorcss.css';
 
-
 function tutors() {
   return (
     
