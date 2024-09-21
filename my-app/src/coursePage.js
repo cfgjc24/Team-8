@@ -34,7 +34,9 @@ export default function CoursePage({progress}) {
           }}
         />
       </div>
-      <div style={{ marginTop: '10px' }}>{progress}</div>
+      <div style={{ marginTop: '10px' }}>
+        <font color= "black">Track Your Progress</font>
+      </div>
         <h1>Available Lessons</h1>
         <div className="lessons-container">
           {/* Lesson 1 */}
