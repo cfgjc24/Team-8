@@ -7,6 +7,8 @@ import './calendarPage.css';
 import './Forum.css';
 import LoginPage from './LoginPage';  // Login Page component
 import SignUpForm from './SignUpForm';  // Registration form component (SignUpForm)
+
+import TutoringDash from './tutoringdash';
 import CoursePage from './coursePage';
 import CalendarPage from './calendarpage';
 import Oppertunities from './oppertunities';
@@ -31,7 +33,7 @@ function HomePage() {
           <Link to="/login" className="App-button">
             <button className="App-button">Student</button>
           </Link>
-          <Link to="/login" className="App-button">
+          <Link to="/tutoringdash" className="App-button">
             <button className="App-button">Tutor</button>
           </Link>
         </div>
@@ -65,6 +67,7 @@ function App() {
         {/* Route for the registration page */}
         <Route path="/register" element={<SignUpForm />} />
 
+        <Route path="/tutoringdash" element={<TutoringDash />} />
         {/*Temporary CoursePage*/}
         <Route path="/courses" element={<CoursePage progress={progress} onProgressChange={handleProgressData} />} />
 

@@ -10,9 +10,11 @@ export default function CoursePage({progress}) {
       <nav className="navbar">
         <ul className="nav-links">
           <li><Link to="/courses" className="nav-item">Courses</Link></li>
+          {/* <li><Link to="/calendar" className="nav-item">Calendar</Link></li> */}
+          <li><Link to="/opportunities" className="nav-item">Opportunities</Link></li>
+          <li><Link to="/profileupdate" className="nav-item">Profile</Link></li>
           <li><Link to="/calendar" className="nav-item">Calendar</Link></li>
           <li><Link to="/oppertunities" className="nav-item">Opportunities</Link></li>
-          <li><Link to="/Profile" className="nav-item">Profile</Link></li>
           <li><Link to="/Forum" className="nav-item">Forum</Link></li>
         </ul>
       </nav>
