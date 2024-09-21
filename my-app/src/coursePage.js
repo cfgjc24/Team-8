@@ -6,6 +6,7 @@ import './oppertunities';
 import './calendarpage';
 import './calendarPage.css';
 import './Forum';
+import './Forum.css';
 
 export default function CoursePage() {
   return (
