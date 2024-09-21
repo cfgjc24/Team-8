@@ -25,7 +25,7 @@ class Tutor(Base):
     age = Column(Integer, nullable=False)
     email = Column(String, nullable=False, unique=True)
     students = relationship('Student', back_populates='tutor')
-    
+
 class Post(Base):
     __tablename__ = 'posts'
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -35,3 +35,12 @@ class Post(Base):
     student = relationship('Student', back_populates='posts')
     comments = relationship('Comment', back_populates='post', cascade='all, delete-orphan')
 
+class Comment(Base):
+    __tablename__ = 'comments'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    post_id = Column(Integer, ForeignKey('posts.id', ondelete='CASCADE'))
+    student_id = Column(Integer, ForeignKey('students.id', ondelete='CASCADE'))
+    content = Column(String, nullable=False)
+    created_at = Column(DateTime, nullable=False, server_default='CURRENT_TIMESTAMP')
+    post = relationship('Post', back_populates='comments')
+    student = relationship('Student', back_populates='comments')
