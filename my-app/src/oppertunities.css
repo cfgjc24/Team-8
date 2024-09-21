@@ -19,6 +19,7 @@ body {
     top: 0;
     background-color: #0044cc; 
   padding: 24px;
+margin-left: -15px;
     position: fixed; 
     z-index: 1000; 
   }

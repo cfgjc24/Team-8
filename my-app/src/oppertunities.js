@@ -13,7 +13,6 @@ function oppertunities() {
         <li><Link to="/calendar" className="nav-item">Calendar</Link></li>
         <li><Link to="/opportunities" className="nav-item">Opportunities</Link></li>
         <li><Link to="/profile" className="nav-item">Profile</Link></li>
-        <li><Link to="/Forum" className="nav-item">Forum</Link></li>
         <li><Link to="/profile" className="nav-item">Forum</Link></li>
       </ul>
     </nav>
@@ -23,7 +22,7 @@ function oppertunities() {
     
        
             <div class="container">
-                <h1 class="sub-title">Oppertunities</h1>
+                <h1 class="sub-title">Opportunities</h1>
                 <div class="work-list">
                     <div class="work">
                       

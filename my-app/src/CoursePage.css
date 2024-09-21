@@ -105,4 +105,13 @@ padding: 20px;
 .capstone-button:hover {
   background-color: #006600; /* Darker green on hover */
 }
+.bottom-button-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 
+}
+
+.attendance-button {
+ margin-top: 20px;
+}
