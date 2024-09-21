@@ -1,3 +1,4 @@
+
 .edit-profile-container {
     max-width: 500px;
     margin: 0 auto;
@@ -8,6 +9,7 @@
     border: 1px solid #e0e0e0;
   }
   
+
   .edit-profile-container h2 {
     text-align: center;
     margin-bottom: 25px;
@@ -16,10 +18,12 @@
     font-weight: bold;
   }
   
+
   .form-group {
     margin-bottom: 20px;
   }
   
+ 
   .form-group label {
     display: block;
     margin-bottom: 8px;
@@ -27,23 +31,31 @@
     color: #333;
     font-weight: 500;
   }
-  
+
   .form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 12px;
-  border-radius: 6px;
-  border: 1px solid #d0d0d0;
-  background-color: #f9f9f9;
-  font-size: 1rem;
-  color: #333;
-  transition: background-color 0.3s, border-color 0.3s;
-}
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #d0d0d0;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    color: #333;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    background-color: #ffffff;
+    border-color: #007bff;
+    outline: none;
+  }
   
   textarea {
     resize: vertical;
+    min-height: 100px;
   }
-  
+
   button {
     width: 100%;
     padding: 12px;
@@ -59,5 +71,12 @@
   
   button:hover {
     background-color: #0056b3;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  }
+  
+  
+  .form-group input:hover,
+  .form-group textarea:hover {
+    border-color: #a0a0a0;
   }
   
