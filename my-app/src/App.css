@@ -2,24 +2,22 @@
 
 .App {
   text-align: center;
-  background-color: rgb(140, 166, 237);
+  background-color: #282c34;
+  min-height: 100vh;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-  margin-top: -20px; /* Adjust this value as needed */
+  margin-top: -20px;
 }
 
 .App-intro {
   font-size: 25px;
   color: #ffffff;
   text-align: center;
-  margin-top: -40px; /* Adjust this value as needed */
+  margin-top: -40px; 
 }
-
-
-
 
 .btn {
   color: rgb(24, 13, 139);
@@ -36,23 +34,16 @@
   justify-content: center;
 }
 
-.error {
-  display: block;
-  background-color: rgb(229, 228, 245);
-  color: white;
-  width: fit-content;
-  height: 50px;
-  padding: 5px;
-}
-
 .App-link {
   color: #61dafb;
 }
+
 .button-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .App-button {
   background-color: #004977;
   color: #ffffff;
@@ -70,13 +61,16 @@
 .App-button:hover {
   background-color: #00325a;
 }
-App-footer{
+
+.App-footer {
   margin-top: 30px;
 }
+
 .button {
   background: none;
   border: none;
-  color: inherit;
+  color: #ffffff;
+
   font: inherit;
   margin-top: 20px;
   cursor: pointer;
@@ -96,5 +90,4 @@ App-footer{
   to {
     transform: rotate(360deg);
   }
-
 }
