@@ -11,8 +11,11 @@
 /* Navigation Bar */
 .navbar {
   width: 100%;
-  background-color: #0044cc; /* Blue background for navbar */
-  padding: 20px;
+  top: 0;
+  background-color: #0044cc; 
+padding: 20px;
+  position: fixed; 
+  z-index: 1000; 
 }
 
 .nav-links {
@@ -95,10 +98,20 @@
   font-size: 20px;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: 40%; /* The capstone button takes up 40% of the screen width */
+  width: 70%; /* The capstone button takes up 70% of the screen width */
   height: 100px; /* Make it the same height as lesson buttons */
 }
 
 .capstone-button:hover {
   background-color: #006600; /* Darker green on hover */
+}
+.bottom-button-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+
+}
+
+.attendance-button {
+ margin-top: 20px;
 }

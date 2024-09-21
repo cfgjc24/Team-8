@@ -1,33 +1,12 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import './Forum.css'; 
 
-const currentUser = {
-  username: "Iris Zhang",
-  profilePicture: "https://via.placeholder.com/40", // Placeholder image, replace with actual user image
-};
-
-// forum component
 const Forum = () => {
   const [posts, setPosts] = useState([]);
   const [newQuestion, setNewQuestion] = useState("");
   const [newCategory, setNewCategory] = useState("Lesson 1");
   const [selectedCategory, setSelectedCategory] = useState(""); // State to track the selected category
-
-  useEffect(() => {
-    fetch("/api/currentUser", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      }
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setCurrentUser(data); 
-      })
-      .catch((error) => {
-        console.error("Error fetching user data:", error);
-      });
-  }, []);
 
   // Categories: Lesson 1 to 7 and Capstone
   const categories = [
@@ -50,8 +29,7 @@ const Forum = () => {
         question: newQuestion,
         category: newCategory,
         replies: [],
-        date: new Date().toLocaleDateString(),
-        user: currentUser, // Associate post with the current user
+        date: new Date().toLocaleDateString(),  // Store the current date as a string
       };
       setPosts([...posts, newPost]);
       setNewQuestion("");
@@ -63,10 +41,7 @@ const Forum = () => {
   const handleAddReply = (postId, reply) => {
     setPosts(
       posts.map((post) =>
-        post.id === postId ? {
-          ...post,
-          replies: [...post.replies, { text: reply, user: currentUser }] // Add reply with user info
-        } : post
+        post.id === postId ? { ...post, replies: [...post.replies, reply] } : post
       )
     );
   };
@@ -82,6 +57,17 @@ const Forum = () => {
 
   return (
     <div className="forum-container">
+
+      {/* Navigation Bar */}
+      <nav className="navbar">
+        <ul className="nav-links">
+          <li><Link to="/courses" className="nav-item">Courses</Link></li>
+          <li><Link to="/calendar" className="nav-item">Calendar</Link></li>
+          <li><Link to="/opportunities" className="nav-item">Opportunities</Link></li>
+          <li><Link to="/profile" className="nav-item">Profile</Link></li>
+        </ul>
+      </nav>
+
       <h1 className="forum-title">Forum</h1>
 
       {/* Form for posting new questions */}
@@ -152,13 +138,8 @@ const Post = ({ post, handleAddReply }) => {
 
   return (
     <div className="forum-post">
-      {/* Display user info along with the post */}
-      <div className="post-header">
-        <img src={post.user.profilePicture} alt={`${post.user.username}'s profile`} className="profile-picture" />
-        <span className="post-username">{post.user.username}</span>
-        <span className="post-date">Posted on: {post.date}</span>
-      </div>
       <h3>{post.question}</h3>
+      <p className="post-date">Posted on: {post.date}</p>
 
       {/* Reply form */}
       <form className="reply-form" onSubmit={handleReplySubmit}>
@@ -176,11 +157,7 @@ const Post = ({ post, handleAddReply }) => {
       <div className="replies">
         {post.replies.length > 0 ? (
           post.replies.map((reply, index) => (
-            <div key={index} className="reply-item">
-              <img src={reply.user.profilePicture} alt={`${reply.user.username}'s profile`} className="profile-picture" />
-              <span className="reply-username">{reply.user.username}</span>
-              <p>&gt; {reply.text}</p>
-            </div>
+            <p key={index}>&gt; {reply}</p>
           ))
         ) : (
           <p className="no-replies">No replies yet. Be the first to reply!</p>
@@ -191,5 +168,6 @@ const Post = ({ post, handleAddReply }) => {
 };
 
 export default Forum;
+
 
 
