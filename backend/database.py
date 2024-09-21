@@ -4,15 +4,13 @@ from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
 
-class Student(Base):
-    __tablename__ = 'students'
-    
-    id = Column(Integer, primary_key=True)
-    first_name = Column(String, nullable=False)
-    last_name = Column(String, nullable=False)
-    age = Column(Integer, nullable=False)
-    email = Column(String, nullable=False, unique=True)
-    dob = Column(DateTime, nullable=False)
+def get_comments_for_post (post_id :int) -> any :
+	db = create_engine('sqlite:///mydatabase.sql')
+	db.select
+
+
+def 
+
 
 # Create the database engine
 engine = create_engine('sqlite:///mydatabase.sql')
