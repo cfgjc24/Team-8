@@ -4,6 +4,7 @@ import './App.css';  // Your CSS file
 import LoginPage from './LoginPage';  // Login Page component
 import SignUpForm from './SignUpForm';  // Registration form component (SignUpForm)
 
+
 // Home Page Component
 function HomePage() {
   return (
@@ -47,6 +48,7 @@ function App() {
 
         {/* Route for the registration page */}
         <Route path="/register" element={<SignUpForm />} />
+
       </Routes>
     </Router>
   );

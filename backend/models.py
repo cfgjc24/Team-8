@@ -15,7 +15,8 @@ class Student(Base):
     tutor_id = Column(Integer, ForeignKey('tutors.id', ondelete='SET NULL'))
     tutor = relationship('Tutor', back_populates='students')
     posts = relationship('Post', back_populates='student', cascade='all, delete-orphan')
-    comments = relationship('Comment', back_populates='student', cascade='all, delete-orphan')  
+    comments = relationship('Comment', back_populates='student', cascade='all, delete-orphan')
+
 
 class Tutor(Base):
     __tablename__ = 'tutors'
