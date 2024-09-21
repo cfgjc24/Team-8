@@ -81,3 +81,15 @@ body {
   .fa-arrow-up-right-from-square {
     margin-left: 5px;
   }
+  
+  @media (max-width: 992px) {
+    .work {
+      flex: 1 1 calc(45% - 30px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .work {
+      flex: 1 1 calc(100% - 30px);
+    }
+  }
