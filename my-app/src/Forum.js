@@ -12,8 +12,12 @@ const Forum = () => {
   const [newQuestion, setNewQuestion] = useState("");
   const [newCategory, setNewCategory] = useState("Lesson 1");
   const [selectedCategory, setSelectedCategory] = useState(""); // State to track the selected category
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 5; 
 
+  /*
   useEffect(() => {
+    // still need endpoint from backend team
     fetch("/api/currentUser", {
       method: "GET",
       headers: {
@@ -28,7 +32,7 @@ const Forum = () => {
         console.error("Error fetching user data:", error);
       });
   }, []);
-
+*/
   // Categories: Lesson 1 to 7 and Capstone
   const categories = [
     "Lesson 1",
@@ -77,8 +81,19 @@ const Forum = () => {
       setSelectedCategory(""); // If already selected, hide the posts
     } else {
       setSelectedCategory(category); // Show posts for the selected category
+      setCurrentPage(1); // Reset to page 1 when switching categories
     }
   };
+
+  // Filter posts by selected category
+  const filteredPosts = posts.filter((post) => post.category === selectedCategory);
+
+  // Pagination logic for the selected category
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
+  
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className="forum-container">
@@ -109,11 +124,9 @@ const Forum = () => {
         <button type="submit">Post Question</button>
       </form>
 
-      {/* Displaying categories and their posts */}
       <div className="forum-posts">
         {categories.map((category) => (
           <div key={category}>
-            {/* Clickable category heading */}
             <h2
               onClick={() => handleCategoryClick(category)}
               className="category-heading"
@@ -121,14 +134,21 @@ const Forum = () => {
               {category}
             </h2>
 
-            {/* Display posts only if the category is selected */}
             {selectedCategory === category && (
               <div className="posts-for-category">
-                {posts
-                  .filter((post) => post.category === category)
-                  .map((post) => (
-                    <Post key={post.id} post={post} handleAddReply={handleAddReply} />
-                  ))}
+                {currentPosts.map((post) => (
+                  <Post key={post.id} post={post} handleAddReply={handleAddReply} />
+                ))}
+
+                {/* Pagination for the current category */}
+                {filteredPosts.length > postsPerPage && (
+                  <Pagination
+                    postsPerPage={postsPerPage}
+                    totalPosts={filteredPosts.length}
+                    paginate={paginate}
+                    currentPage={currentPage}
+                  />
+                )}
               </div>
             )}
           </div>
@@ -177,8 +197,6 @@ const Post = ({ post, handleAddReply }) => {
         {post.replies.length > 0 ? (
           post.replies.map((reply, index) => (
             <div key={index} className="reply-item">
-              <img src={reply.user.profilePicture} alt={`${reply.user.username}'s profile`} className="profile-picture" />
-              <span className="reply-username">{reply.user.username}</span>
               <p>&gt; {reply.text}</p>
             </div>
           ))
@@ -190,6 +208,30 @@ const Post = ({ post, handleAddReply }) => {
   );
 };
 
+// Pagination Component
+const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
+  const pageNumbers = [];
+
+  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
+  return (
+    <nav>
+      <ul className="pagination">
+        {pageNumbers.map(number => (
+          <li key={number} className={`page-item ${currentPage === number ? 'active' : ''}`}>
+            <a onClick={() => paginate(number)} href="#!" className="page-link">
+              {number}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
 export default Forum;
+
 
 
