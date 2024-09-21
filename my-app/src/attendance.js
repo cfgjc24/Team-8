@@ -11,8 +11,8 @@ function MyForm() {
   const [session, setSession] = useState("Select Session"); 
 
   // State for the radio button groups
-  const [confidence, setConfidence] = useState(""); // For confidence level
-  const [belonging, setBelonging] = useState(""); // For sense of belonging
+  const [confidence, setConfidence] = useState(""); 
+  const [belonging, setBelonging] = useState(""); 
 
   const handleChange = (event) => {
     setSchool(event.target.value);
