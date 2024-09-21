@@ -64,7 +64,7 @@ const Forum = () => {
           <li><Link to="/courses" className="nav-item">Courses</Link></li>
           <li><Link to="/calendar" className="nav-item">Calendar</Link></li>
           <li><Link to="/opportunities" className="nav-item">Opportunities</Link></li>
-          <li><Link to="/profile" className="nav-item">Profile</Link></li>
+          <li><Link to="/profileupdate" className="nav-item">Profile</Link></li>
         </ul>
       </nav>
 
