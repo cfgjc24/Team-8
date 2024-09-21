@@ -1,19 +1,55 @@
 /* creating the css for the oppertunities page */
 
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    height: 100%;
     background-color: #282c34;
   }
   
+
+
+
+
+  /* Navigation Bar */
+.navbar {
+    width: 100%;
+    top: 0;
+    background-color: #0044cc; 
+  padding: 24px;
+    position: fixed; 
+    z-index: 1000; 
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    color: white;
+    text-decoration: none;
+    margin: 0 30px; /* Increased margin for better spacing */
+    font-size: 20px;
+  }
+  
+  .nav-item:hover {
+    text-decoration: underline;
+  }
   #projects {
     padding: 20px;
   }
   
   .container {
     max-width: 1200px;
-    margin-top: 90px;
+    margin-top: 200px;
+
+  margin-left: 80px;
     padding: 20px;
     background-color: #282c34;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -69,7 +105,7 @@ body {
     color: #007bff;
     font-size: 1.2em;
   }
-  /* change color on hover */
+  
   .layer a:hover {
     color: #0056b3;
   }

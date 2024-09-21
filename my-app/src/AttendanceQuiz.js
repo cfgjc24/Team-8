@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import ReactDOM from 'react-dom/client';
+
 import './AttendanceQuiz.css'; // Make sure to create this file and include the CSS
 
 export default function AttendanceQuiz({progress, handleProgressData}) {
