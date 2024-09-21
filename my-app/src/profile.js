@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';
 
 const EditProfile = () => {
     const [profile, setProfile] = useState({
@@ -33,7 +34,7 @@ const EditProfile = () => {
                         name="name"
                         value={profile.name}
                         onChange={handleInputChange}
-                        placeholder="Name"
+                        placeholder="Enter your name"
                     />
                 </div>
 
@@ -45,22 +46,25 @@ const EditProfile = () => {
                         name="email"
                         value={profile.email}
                         onChange={handleInputChange}
-                        placeholder="Email"
+                        placeholder="Enter your email"
                     />
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="Status">:</label>
+                    <label htmlFor="bio">Bio:</label>
                     <textarea
                         id="bio"
                         name="bio"
                         value={profile.bio}
                         onChange={handleInputChange}
-                        placeholder="Status"
+                        placeholder="Bio"
                     />
                 </div>
 
                 <button type="submit">Save Changes</button>
+                <br></br>
+                <br></br>
+                <br></br>
                 <button type="button">Logout</button>
             </form>
         </div>
