@@ -28,12 +28,17 @@
     font-weight: 500;
   }
   
-  .form-group input, .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
+  .form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #d0d0d0;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  color: #333;
+  transition: background-color 0.3s, border-color 0.3s;
+}
   
   textarea {
     resize: vertical;
