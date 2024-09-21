@@ -12,8 +12,12 @@ const Forum = () => {
   const [newQuestion, setNewQuestion] = useState("");
   const [newCategory, setNewCategory] = useState("Lesson 1");
   const [selectedCategory, setSelectedCategory] = useState(""); // State to track the selected category
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 5; // Define how many posts per page
 
+  /*
   useEffect(() => {
+    // still need endpoint from backend team
     fetch("/api/currentUser", {
       method: "GET",
       headers: {
@@ -28,7 +32,7 @@ const Forum = () => {
         console.error("Error fetching user data:", error);
       });
   }, []);
-
+*/
   // Categories: Lesson 1 to 7 and Capstone
   const categories = [
     "Lesson 1",
@@ -80,6 +84,13 @@ const Forum = () => {
     }
   };
 
+    // Pagination logic
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+    
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <div className="forum-container">
       <h1 className="forum-title">Forum</h1>
@@ -109,11 +120,9 @@ const Forum = () => {
         <button type="submit">Post Question</button>
       </form>
 
-      {/* Displaying categories and their posts */}
       <div className="forum-posts">
         {categories.map((category) => (
           <div key={category}>
-            {/* Clickable category heading */}
             <h2
               onClick={() => handleCategoryClick(category)}
               className="category-heading"
@@ -121,14 +130,21 @@ const Forum = () => {
               {category}
             </h2>
 
-            {/* Display posts only if the category is selected */}
             {selectedCategory === category && (
               <div className="posts-for-category">
-                {posts
+                {currentPosts
                   .filter((post) => post.category === category)
                   .map((post) => (
                     <Post key={post.id} post={post} handleAddReply={handleAddReply} />
                   ))}
+
+                {/* Pagination */}
+                <Pagination
+                  postsPerPage={postsPerPage}
+                  totalPosts={posts.length}
+                  paginate={paginate}
+                  currentPage={currentPage}
+                />
               </div>
             )}
           </div>
@@ -187,6 +203,29 @@ const Post = ({ post, handleAddReply }) => {
         )}
       </div>
     </div>
+  );
+};
+
+// Pagination Component
+const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
+  const pageNumbers = [];
+
+  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
+  return (
+    <nav>
+      <ul className="pagination">
+        {pageNumbers.map(number => (
+          <li key={number} className={`page-item ${currentPage === number ? 'active' : ''}`}>
+            <a onClick={() => paginate(number)} href="#!" className="page-link">
+              {number}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 
