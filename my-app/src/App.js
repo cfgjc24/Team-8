@@ -4,7 +4,7 @@ import './App.css';  // Your CSS file
 import './CoursePage.css';
 import LoginPage from './LoginPage';  // Login Page component
 import SignUpForm from './SignUpForm';  // Registration form component (SignUpForm)
-import CoursePage from './CoursePage';
+import CoursePage from './coursePage';
 
 
 
