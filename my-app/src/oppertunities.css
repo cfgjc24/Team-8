@@ -1,3 +1,5 @@
+/* creating the css for the oppertunities page */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -12,7 +14,6 @@ body {
   .container {
     max-width: 1200px;
     margin-top: 90px;
-  
     padding: 20px;
     background-color: #282c34;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -68,7 +69,7 @@ body {
     color: #007bff;
     font-size: 1.2em;
   }
-  
+  /* change color on hover */
   .layer a:hover {
     color: #0056b3;
   }

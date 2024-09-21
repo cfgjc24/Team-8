@@ -1,11 +1,6 @@
-import React from 'react';
+import React from "react";
 import { Link } from 'react-router-dom';
-import './CoursePage.css';
-import './oppertunities.css';
-import './oppertunities';
-import './calendarpage';
-import './calendarPage.css';
-
+import './Forum.css';
 
 
 export default function CoursePage({progress}) {
@@ -17,8 +12,8 @@ export default function CoursePage({progress}) {
           <li><Link to="/courses" className="nav-item">Courses</Link></li>
           <li><Link to="/calendar" className="nav-item">Calendar</Link></li>
           <li><Link to="/oppertunities" className="nav-item">Opportunities</Link></li>
-          <li><Link to="/profile" className="nav-item">Profile</Link></li>
-          <li><Link to="/profile" className="nav-item">Forum</Link></li>
+          <li><Link to="/Profile" className="nav-item">Profile</Link></li>
+          <li><Link to="/Forum" className="nav-item">Forum</Link></li>
         </ul>
       </nav>
     
