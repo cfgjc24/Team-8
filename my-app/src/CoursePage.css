@@ -95,7 +95,7 @@
   font-size: 20px;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: 40%; /* The capstone button takes up 40% of the screen width */
+  width: 70%; /* The capstone button takes up 70% of the screen width */
   height: 100px; /* Make it the same height as lesson buttons */
 }
 

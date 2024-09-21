@@ -1,17 +1,3 @@
-//the purpose of this page is where you see all course
-
-//need a nav bar
-   //need a link to course 
-    //need a link to calendar
-   //need a link to opportunities
-   //need a link to profile
-
-
-//main page
-//need lessons 1 through 8 to be listed horizontally
-//need the same structure for the capstone button
-//
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './CoursePage.css';
@@ -33,19 +19,64 @@ export default function CoursePage() {
       <div className="content">
         <h1>Available Lessons</h1>
         <div className="lessons-container">
-          {/* Listing Lessons 1 through 8 horizontally */}
-          {[...Array(8)].map((_, index) => (
-            <div key={index} className="lesson-item">
-              <button className="lesson-button">Lesson {index + 1}</button>
-            </div>
-          ))}
+          {/* Lesson 1 */}
+          <div className="lesson-item">
+            <a href="https://sites.google.com/view/fgistudent/curriculum/1-personal-finance" target="_blank" rel="noopener noreferrer">
+              <button className="lesson-button">Lesson 1</button>
+            </a>
+          </div>
+
+          {/* Lesson 2 */}
+          <div className="lesson-item">
+            <a href="https://sites.google.com/view/fgistudent/curriculum/2-what-is-a-stock" target="_blank" rel="noopener noreferrer">
+              <button className="lesson-button">Lesson 2</button>
+            </a>
+          </div>
+
+          {/* Lesson 3 */}
+          <div className="lesson-item">
+            <a href="https://sites.google.com/view/fgistudent/curriculum/3-volatility-and-diversification" target="_blank" rel="noopener noreferrer">
+              <button className="lesson-button">Lesson 3</button>
+            </a>
+          </div>
+
+          {/* Lesson 4 */}
+          <div className="lesson-item">
+            <a href="https://sites.google.com/view/fgistudent/curriculum/4-what-is-a-bond" target="_blank" rel="noopener noreferrer">
+              <button className="lesson-button">Lesson 4</button>
+            </a>
+          </div>
+
+          {/* Lesson 5 */}
+          <div className="lesson-item">
+            <a href="https://sites.google.com/view/fgistudent/curriculum/5-mutual-fundsetfs" target="_blank" rel="noopener noreferrer">
+              <button className="lesson-button">Lesson 5</button>
+            </a>
+          </div>
+
+          {/* Lesson 6 */}
+          <div className="lesson-item">
+            <a href="https://sites.google.com/view/fgistudent/curriculum/6-compound-interest-and-dca" target="_blank" rel="noopener noreferrer">
+              <button className="lesson-button">Lesson 6</button>
+            </a>
+          </div>
+
+          {/* Lesson 7 */}
+          <div className="lesson-item">
+            <a href="https://sites.google.com/view/fgistudent/curriculum/7-personal-finance-2-0" target="_blank" rel="noopener noreferrer">
+              <button className="lesson-button">Lesson 7</button>
+            </a>
+          </div>
         </div>
 
         {/* Capstone Project Button */}
         <div className="capstone-container">
-          <button className="capstone-button">Capstone Project</button>
+          <a href="https://sites.google.com/view/fgistudent/curriculum/capstone-project" target="_blank" rel="noopener noreferrer">
+            <button className="capstone-button">Capstone Project</button>
+          </a>
         </div>
       </div>
     </div>
   );
 }
+

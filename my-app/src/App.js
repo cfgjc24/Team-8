@@ -1,8 +1,11 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import logo from './FGN-removebg-preview.png';  // Your logo
 import './App.css';  // Your CSS file
+import './CoursePage.css';
 import LoginPage from './LoginPage';  // Login Page component
 import SignUpForm from './SignUpForm';  // Registration form component (SignUpForm)
+import CoursePage from './CoursePage';
+
 
 
 // Home Page Component
@@ -23,6 +26,9 @@ function HomePage() {
           </Link>
           <Link to="/login" className="App-button">
             <button className="App-button">Admin</button>
+          </Link>
+          <Link to="/courses" className="App-button">
+            <button className="App-button">Courses</button>
           </Link>
         </div>
         <div className="App-footer">
@@ -48,6 +54,9 @@ function App() {
 
         {/* Route for the registration page */}
         <Route path="/register" element={<SignUpForm />} />
+
+          {/*Temporary CoursePage*/}
+          <Route path="/courses" element={<CoursePage />} />
 
       </Routes>
     </Router>
