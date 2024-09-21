@@ -11,12 +11,19 @@ function MyForm() {
   const [session, setSession] = useState("Select Session"); 
 
   const handleChange = (event) => {
-    setSchool(event.target.value)
-  }
+    setSchool(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Handle form submission logic here
+    alert('Form submitted!');
+    console.log({ name, email, difficult, experience, additional, school, session });
+  };
 
   return (
-    <form>
-    <div style={{ marginBottom: '1rem' }}>
+    <form onSubmit={handleSubmit}>
+      <div style={{ marginBottom: '1rem' }}>
         <label>FGI Attendance Form</label>
       </div>
 
@@ -29,6 +36,7 @@ function MyForm() {
             type="text" 
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
           />
         </label>
       </div>
@@ -36,36 +44,37 @@ function MyForm() {
       <div style={{ marginBottom: '1rem' }}>
         <label>Enter your email :   
           <input
-            type="text" 
+            type="email" 
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
         </label>
       </div> 
 
       <div style={{ marginBottom: '1rem' }}>
-            <label>Session Attendance:  </label>
-              <select value={session} onChange={handleChange}>
-                <option value="Please Select">Please Select</option>
-                <option value="Session 1">Session 1</option>
-                <option value="Session 2">Session 2</option>
-                <option value="Session 3">Session 3</option>
-                <option value="Session 4">Session 4</option>
-                <option value="Session 5">Session 5</option>
-                <option value="Session 6">Session 6</option>
-                <option value="Session 7">Session 7</option>
-                <option value="Capstone Project- Presentation">Capstone Project- Presentation</option>
-              </select>
+        <label>Session Attendance:  </label>
+        <select value={session} onChange={(e) => setSession(e.target.value)}>
+          <option value="Please Select">Please Select</option>
+          <option value="Session 1">Session 1</option>
+          <option value="Session 2">Session 2</option>
+          <option value="Session 3">Session 3</option>
+          <option value="Session 4">Session 4</option>
+          <option value="Session 5">Session 5</option>
+          <option value="Session 6">Session 6</option>
+          <option value="Session 7">Session 7</option>
+          <option value="Capstone Project- Presentation">Capstone Project- Presentation</option>
+        </select>
       </div>
 
-     <div style={{ marginBottom: '1rem' }}>
-            <label>Cohort:  </label>
-              <select value={school} onChange={handleChange}>
-                <option value="Please Select">Please Select</option>
-                <option value="Harmony High School">Harmony High School</option>
-                <option value="King High School">King High School</option>
-                <option value="On Track Academy">On Track Academy</option>
-              </select>
+      <div style={{ marginBottom: '1rem' }}>
+        <label>Cohort:  </label>
+        <select value={school} onChange={handleChange}>
+          <option value="Please Select">Please Select</option>
+          <option value="Harmony High School">Harmony High School</option>
+          <option value="King High School">King High School</option>
+          <option value="On Track Academy">On Track Academy</option>
+        </select>
       </div>
 
       <div style={{ marginBottom: '1rem' }}>
@@ -98,9 +107,21 @@ function MyForm() {
         </label>
       </div>
 
+      <button type="submit" style={buttonStyle}>Submit</button>
     </form>
   );
 }
+
+const buttonStyle = {
+  padding: '10px 10px',
+  fontSize: '16px',
+  color: '#fff',
+  backgroundColor: '#007bff',
+  border: 'none',
+  borderRadius: '5px',
+  cursor: 'pointer',
+  transition: 'background-color 0.3s',
+};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<MyForm />);
