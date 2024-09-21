@@ -25,7 +25,7 @@ function HomePage() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <div className="App-intro">
-          <p>Please choose your role</p>
+          <p>Select your role</p>
         </div>
         <div className="button-container">
           <Link to="/login" className="App-button">
@@ -33,9 +33,6 @@ function HomePage() {
           </Link>
           <Link to="/login" className="App-button">
             <button className="App-button">Tutor</button>
-          </Link>
-          <Link to="/courses" className="App-button">
-            <button className="App-button">Courses</button>
           </Link>
         </div>
         <div className="App-footer">

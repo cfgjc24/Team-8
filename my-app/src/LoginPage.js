@@ -1,31 +1,22 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import './LoginPage.css';  // Import the CSS file
 
 export default function LoginPage() {
 
-    const navigate = useNavigate();
+    const navigate = useNavigate();  // Use navigate from react-router-dom
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     async function handleLogin(e) {
         e.preventDefault();
-        try {
-            const requestBody = { email, password };
-            const response = await axios.post('https://api.p2.lc2s5.foxhub.space/login', requestBody);
-            localStorage.setItem('access_token', response.data.access_token);
-            navigate('/');
-        } catch (error) {
-            console.log(error);
-            Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: error.response.data.message
-            });
-        }
+
+        // Always navigate to courses page no matter what
+        navigate('/courses');
+
+    
     }
 
     return (
