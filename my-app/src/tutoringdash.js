@@ -12,7 +12,7 @@ function tutors() {
                 <div class="work">
                   
                     <div class="layer">
-                        <h3>Documents</h3>
+                        <h3>Student Documents</h3>
                         <p></p>
                         <a href="https://www.firstgenerationinvestors.com/enroll.html" target="_blank" rel="noopener noreferrer" className="button">
                    FORMS INCOMPLETE
