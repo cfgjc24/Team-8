@@ -6,7 +6,7 @@ import './oppertunities.css';
 import LoginPage from './LoginPage';  // Login Page component
 import SignUpForm from './SignUpForm';  // Registration form component (SignUpForm)
 import CoursePage from './coursePage';
-import Oppertunities from './oppertunities';
+import CalendarPage from './calendarpage';
 
 
 
@@ -25,6 +25,9 @@ function HomePage() {
           </Link>
           <Link to="/login" className="App-button">
             <button className="App-button">Tutor</button>
+          </Link>
+          <Link to="/calendarpage" className="App-button">
+            <button className="App-button">Admin</button>
           </Link>
           <Link to="/courses" className="App-button">
             <button className="App-button">Courses</button>
@@ -57,8 +60,8 @@ function App() {
           {/*Temporary CoursePage*/}
           <Route path="/courses" element={<CoursePage />} />
 
-          <Route path="/oppertunities" element={<Oppertunities/>} />
-
+        {/*Temporary CalendarPage*/}
+        <Route path="/calendarpage" element={<CalendarPage/>} />
 
       </Routes>
     </Router>

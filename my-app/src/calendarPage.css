@@ -1,0 +1,22 @@
+/* General container for the course page */
+.course-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f8ff; /* Light blue background */
+  }
+
+  
+  /* Google Calendar Embed */
+  .calendar-container {
+    width: 100%; /* Full width */
+    display: flex;
+    justify-content: center; /* Center the calendar */
+    margin-top: 10px; /* Space below the navbar */
+    height: calc(100vh - 80px); /* Fill the rest of the page */
+    background: #f0f8ff; /* Light background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Clip overflow for rounded corners */
+  }
+  
