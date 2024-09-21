@@ -6,7 +6,7 @@ const Forum = () => {
   const [posts, setPosts] = useState([]);
   const [newQuestion, setNewQuestion] = useState("");
   const [newCategory, setNewCategory] = useState("Lesson 1");
-  const [selectedCategory, setSelectedCategory] = useState(""); // state to track the selected category
+  const [selectedCategory, setSelectedCategory] = useState(""); // State to track the selected category
 
   // Categories: Lesson 1 to 7 and Capstone
   const categories = [
@@ -24,7 +24,14 @@ const Forum = () => {
   const handleNewQuestion = (e) => {
     e.preventDefault();
     if (newQuestion.trim()) {
-      setPosts([...posts, { id: Date.now(), question: newQuestion, category: newCategory, replies: [] }]);
+      const newPost = {
+        id: Date.now(),
+        question: newQuestion,
+        category: newCategory,
+        replies: [],
+        date: new Date().toLocaleDateString(),  // Store the current date as a string
+      };
+      setPosts([...posts, newPost]);
       setNewQuestion("");
       setNewCategory("Lesson 1"); // Reset to default
     }
@@ -42,9 +49,9 @@ const Forum = () => {
   // Toggle displaying posts when a lesson is clicked
   const handleCategoryClick = (category) => {
     if (selectedCategory === category) {
-      setSelectedCategory(""); // if already selected, hide the posts
+      setSelectedCategory(""); // If already selected, hide the posts
     } else {
-      setSelectedCategory(category); // show posts for the selected category
+      setSelectedCategory(category); // Show posts for the selected category
     }
   };
 
@@ -107,6 +114,7 @@ const Forum = () => {
   );
 };
 
+// Individual post component
 const Post = ({ post, handleAddReply }) => {
   const [reply, setReply] = useState("");
 
@@ -121,6 +129,7 @@ const Post = ({ post, handleAddReply }) => {
   return (
     <div className="forum-post">
       <h3>{post.question}</h3>
+      <p className="post-date">Posted on: {post.date}</p>
 
       {/* Reply form */}
       <form className="reply-form" onSubmit={handleReplySubmit}>
@@ -149,3 +158,4 @@ const Post = ({ post, handleAddReply }) => {
 };
 
 export default Forum;
+
