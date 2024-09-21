@@ -13,7 +13,7 @@ const Forum = () => {
   const [newCategory, setNewCategory] = useState("Lesson 1");
   const [selectedCategory, setSelectedCategory] = useState(""); // State to track the selected category
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 5; // Define how many posts per page
+  const postsPerPage = 5; 
 
   /*
   useEffect(() => {
@@ -81,15 +81,19 @@ const Forum = () => {
       setSelectedCategory(""); // If already selected, hide the posts
     } else {
       setSelectedCategory(category); // Show posts for the selected category
+      setCurrentPage(1); // Reset to page 1 when switching categories
     }
   };
 
-    // Pagination logic
-    const indexOfLastPost = currentPage * postsPerPage;
-    const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-    
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  // Filter posts by selected category
+  const filteredPosts = posts.filter((post) => post.category === selectedCategory);
+
+  // Pagination logic for the selected category
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
+  
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className="forum-container">
@@ -132,19 +136,19 @@ const Forum = () => {
 
             {selectedCategory === category && (
               <div className="posts-for-category">
-                {currentPosts
-                  .filter((post) => post.category === category)
-                  .map((post) => (
-                    <Post key={post.id} post={post} handleAddReply={handleAddReply} />
-                  ))}
+                {currentPosts.map((post) => (
+                  <Post key={post.id} post={post} handleAddReply={handleAddReply} />
+                ))}
 
-                {/* Pagination */}
-                <Pagination
-                  postsPerPage={postsPerPage}
-                  totalPosts={posts.length}
-                  paginate={paginate}
-                  currentPage={currentPage}
-                />
+                {/* Pagination for the current category */}
+                {filteredPosts.length > postsPerPage && (
+                  <Pagination
+                    postsPerPage={postsPerPage}
+                    totalPosts={filteredPosts.length}
+                    paginate={paginate}
+                    currentPage={currentPage}
+                  />
+                )}
               </div>
             )}
           </div>
@@ -193,8 +197,6 @@ const Post = ({ post, handleAddReply }) => {
         {post.replies.length > 0 ? (
           post.replies.map((reply, index) => (
             <div key={index} className="reply-item">
-              <img src={reply.user.profilePicture} alt={`${reply.user.username}'s profile`} className="profile-picture" />
-              <span className="reply-username">{reply.user.username}</span>
               <p>&gt; {reply.text}</p>
             </div>
           ))
@@ -230,5 +232,6 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
 };
 
 export default Forum;
+
 
 
