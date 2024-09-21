@@ -1,11 +1,9 @@
 import React, { useState } from "react";
+import './Forum.css'; 
 
 // forum component
 const Forum = () => {
-  // state for storing forum posts
   const [posts, setPosts] = useState([]);
-  
-  // state for new question form
   const [newQuestion, setNewQuestion] = useState("");
 
   // function to handle submitting a new question
@@ -17,7 +15,7 @@ const Forum = () => {
     }
   };
 
-  // Add a reply to a specific post
+  // add a reply to a specific post
   const handleAddReply = (postId, reply) => {
     setPosts(
       posts.map((post) =>
@@ -27,11 +25,11 @@ const Forum = () => {
   };
 
   return (
-    <div>
-      <h1>Forum</h1>
+    <div className="forum-container">
+      <h1 className="forum-title">Forum</h1>
       
       {/* Form for posting new questions */}
-      <form onSubmit={handleNewQuestion}>
+      <form className="forum-form" onSubmit={handleNewQuestion}>
         <input
           type="text"
           placeholder="Ask a question..."
@@ -45,7 +43,7 @@ const Forum = () => {
       {/* Displaying posts */}
       <div className="forum-posts">
         {posts.length === 0 ? (
-          <p>No questions yet. Be the first to ask!</p>
+          <p className="no-questions">No questions yet. Be the first to ask!</p>
         ) : (
           posts.map((post) => (
             <Post key={post.id} post={post} handleAddReply={handleAddReply} />
@@ -73,7 +71,7 @@ const Post = ({ post, handleAddReply }) => {
       <h3>{post.question}</h3>
       
       {/* Reply form */}
-      <form onSubmit={handleReplySubmit}>
+      <form className="reply-form" onSubmit={handleReplySubmit}>
         <input
           type="text"
           placeholder="Add a reply or something you found interesting..."
@@ -91,12 +89,13 @@ const Post = ({ post, handleAddReply }) => {
             <p key={index}>&gt; {reply}</p>
           ))
         ) : (
-          <p>No replies yet. Be the first to reply!</p>
+          <p className="no-replies">No replies yet. Be the first to reply!</p>
         )}
-      </div> 
+      </div>
     </div>
   );
 };
 
 export default Forum;
+
 
