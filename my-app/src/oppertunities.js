@@ -14,7 +14,7 @@ function oppertunities() {
                     <div class="layer">
                         <h3>Clubs</h3>
                         <p>Finance Related clubs</p>
-                        <a href="https://github.com/PeterNjoroge13/PeterGotKicks" target="_blank" rel="noopener noreferrer" className="button">
+                        <a href="https://www.charitycharge.com/nonprofit-resources/financial-literacy-nonprofits/" target="_blank" rel="noopener noreferrer" className="button">
                   Club Oppertunities
               </a>
                     </div>
@@ -24,17 +24,17 @@ function oppertunities() {
                     <div class="layer">
                         <h3>Internships</h3>
                         <p>Finance related Internships</p>
-                        <a href="https://github.com/PeterNjoroge13/PeterGotKicks" target="_blank" rel="noopener noreferrer" className="button">
+                        <a href="https://www.ziprecruiter.com/Jobs/High-School-Finance-Intern/-in-New-York,NY" target="_blank" rel="noopener noreferrer" className="button">
 Internships Oppertunities
               </a>
-                         </div>s
+                         </div>
                 </div>
                 <div class="work">
                    
                     <div class="layer">
-                        <h3>Meetings </h3>
-                        <p>Finance Related Meetings</p>
-                        <a href="https://github.com/PeterNjoroge13/PeterGotKicks" target="_blank" rel="noopener noreferrer" className="button">
+                        <h3>Additional Courses </h3>
+                        <p>Finance Related courses</p>
+                        <a href="hhttps://www.khanacademy.org/college-careers-more/financial-literacy" target="_blank" rel="noopener noreferrer" className="button">
                Meeting Oppertunities
               </a>
                     </div>
