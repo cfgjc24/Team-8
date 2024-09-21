@@ -1,0 +1,104 @@
+/* General container for the course page */
+.course-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f8ff; /* Light blue background */
+  padding: 20px;
+}
+
+/* Navigation Bar */
+.navbar {
+  width: 100%;
+  background-color: #0044cc; /* Blue background for navbar */
+  padding: 20px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  margin: 0 30px; /* Increased margin for better spacing */
+  font-size: 20px;
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+}
+
+/* Main content area */
+.content {
+  width: 80%; /* Increase the width to take more space */
+  text-align: center;
+  padding: 50px;
+  margin: 0 auto; /* Center the content */
+}
+
+.content h1 {
+  color: #0044cc;
+  font-size: 32px; /* Increased font size */
+  margin-bottom: 40px;
+}
+
+/* Lessons listed horizontally */
+.lessons-container {
+  display: flex;
+  justify-content: space-evenly; /* Spread items more evenly */
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.lesson-item {
+  margin: 20px;
+  flex: 1 1 15%; /* Allow lesson buttons to take up more space */
+  min-width: 150px;
+}
+
+.lesson-button {
+  background-color: #0044cc;
+  color: white;
+  border: none;
+  border-radius: 10px; /* Increased the border radius */
+  padding: 20px 40px; /* Increased button size */
+  font-size: 18px; /* Increased font size */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%; /* Make the button fill its container */
+  height: 100px; /* Ensure all buttons have a consistent height */
+}
+
+.lesson-button:hover {
+  background-color: #003399; /* Slightly darker blue on hover */
+}
+
+/* Capstone project button */
+.capstone-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.capstone-button {
+  background-color: #008000; /* Green background for capstone button */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 20px 60px; /* Larger padding for capstone button */
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 70%; /* The capstone button takes up 70% of the screen width */
+  height: 100px; /* Make it the same height as lesson buttons */
+}
+
+.capstone-button:hover {
+  background-color: #006600; /* Darker green on hover */
+}

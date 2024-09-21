@@ -1,21 +1,23 @@
-// Purpose: This file contains the code for the oppertunities page of the website.
+import logo from './logo.svg';
+import './App.css';
 
-
-import './oppertunities.css';
 
 function oppertunities() {
     return (
 
         <div id="oppertunities">
         <div class="container">
-            <h1 class="sub-title">My Services</h1>
-            <div class="services-list">
-                <div>
-                    <i class="fa-solid fa-code"></i>
-                    <h2>Internships</h2>
-                    <p>Financial Internship Oppertunies</p>
-                    <a href="https://www.ziprecruiter.com/Jobs/High-School-Finance-Intern/-in-New-York,NY"  target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                   
+            <h1 class="sub-title">Oppertunities</h1>
+            <div class="work-list">
+                <div class="work">
+                  
+                    <div class="layer">
+                        <h3>Clubs</h3>
+                        <p>Finance Related clubs</p>
+                        <a href="https://www.charitycharge.com/nonprofit-resources/financial-literacy-nonprofits/" target="_blank" rel="noopener noreferrer" className="button">
+                  Club Oppertunities
+              </a>
+                    </div>
                 </div>
                 <div>
                     <i class="fa-solid fa-window-restore"></i>
@@ -35,8 +37,7 @@ function oppertunities() {
             </div>
         </div>
     </div>
-
-);
+  );
 }
 
 export default oppertunities;
