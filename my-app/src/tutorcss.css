@@ -9,17 +9,16 @@ body {
 }
   
   #projects {
-    padding: 20px;
+    padding: 40px;
   }
   
   .container {
-    max-width: 2000px;
-    margin-top: 90px;
-  
-    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
     background-color: #2a3244;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 500px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   }
   
   .sub-title {
