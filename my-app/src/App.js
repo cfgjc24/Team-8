@@ -3,7 +3,7 @@ import logo from './FGN-removebg-preview.png';  // Your logo
 import './App.css';  // Your CSS file
 import LoginPage from './LoginPage';  // Login Page component
 import SignUpForm from './SignUpForm';  // Registration form component (SignUpForm)
-
+import TutoringDash from './tutoringdash';
 
 // Home Page Component
 function HomePage() {
@@ -18,7 +18,7 @@ function HomePage() {
           <Link to="/login" className="App-button">
             <button className="App-button">Student</button>
           </Link>
-          <Link to="/login" className="App-button">
+          <Link to="/tutoringdash" className="App-button">
             <button className="App-button">Tutor</button>
           </Link>
           <Link to="/login" className="App-button">
@@ -48,6 +48,8 @@ function App() {
 
         {/* Route for the registration page */}
         <Route path="/register" element={<SignUpForm />} />
+
+        <Route path="/tutoringdash" element={<TutoringDash />} />
 
       </Routes>
     </Router>
