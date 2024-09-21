@@ -1,70 +1,93 @@
-.App {
+/* General styling for the form container */
+.SUApp {
     text-align: center;
-  }
-  
-  .App-logo {
-    height: 40vmin;
-    pointer-events: none;
-    margin-top: -20px; /* Adjust this value as needed */
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #ffffff;
-  }
-  
-  .App-intro {
-    font-size: 25px;
-    color: #ffffff;
-    text-align: center;
-    margin-top: -20px; 
-  }
-  
-  .button-container {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    min-height: 100vh; /* Ensures the form is vertically centered */
+    background-color: #f0f8ff; /* A very light blue background */
   }
   
-  .App-button {
-    margin: 10px 0;
-    text-align: center;
-    padding: 10px 20px;
+  /* Styling for the form itself */
+  .SUApp-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    width: 100%;
+    max-width: 400px; /* Keeps the form a manageable width */
+    text-align: left; /* Aligns labels and inputs to the left */
+  }
+  
+  /* Header styles */
+  .SUApp-header {
+    margin-bottom: 20px;
+  }
+  
+  .SUApp-header h1 {
+    color: #0044cc; /* Dark blue for the main heading */
+    font-size: 24px;
+  }
+  
+  .SUApp-header h2 {
+    color: #000000; /* Black for the secondary heading */
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for each label */
+  .SUApp-label {
     font-size: 16px;
-    cursor: pointer;
+    color: #000000; /* Black text for labels */
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
   }
   
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  /* Styling for the input fields */
+  .SUApp-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
   }
   
-  .App-footer .button {
-    background: none;
+  /* Button styling */
+  .SUApp-button {
+    background-color: #0044cc; /* Blue background */
+    color: white; /* White text */
     border: none;
-    color: inherit;
-    font: inherit;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
     cursor: pointer;
-    padding: 0;
-    text-decoration: underline;
   }
   
-  .App-footer .button:hover {
-    text-decoration: none;
-    color: #004977; 
+  .SUApp-button:hover {
+    background-color: #003399; /* Slightly darker blue on hover */
   }
+  
+  /* Success and error messages */
+  .success, .error {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .success {
+    background-color: #d4edda; /* Light green for success */
+    color: #155724; /* Dark green text */
+  }
+  
+  .error {
+    background-color: #f8d7da; /* Light red for error */
+    color: #721c24; /* Dark red text */
+  }
+  
