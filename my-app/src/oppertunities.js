@@ -2,12 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 
 
-function oppertunities() {
-    return (
-
-        <div id="oppertunities">
+export default function oppertunities() {
+  return (
+    
+    <div id="projects">
         <div class="container">
-            <h1 class="sub-title">Oppertunities</h1>
+            <h1 class="sub-title">Opportunities</h1>
             <div class="work-list">
                 <div class="work">
                   
@@ -15,29 +15,32 @@ function oppertunities() {
                         <h3>Clubs</h3>
                         <p>Finance Related clubs</p>
                         <a href="https://www.charitycharge.com/nonprofit-resources/financial-literacy-nonprofits/" target="_blank" rel="noopener noreferrer" className="button">
-                  Club Oppertunities
+                  Club Opportunities
               </a>
                     </div>
                 </div>
-                <div>
-                    <i class="fa-solid fa-window-restore"></i>
-                    <h2>Clubs</h2>
-                    <p>Finance Related Clubs.</p>
-                    <a href="https://www.charitycharge.com/nonprofit-resources/financial-literacy-nonprofits/"  target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-
-
+                <div class="work">
+                  
+                    <div class="layer">
+                        <h3>Internships</h3>
+                        <p>Finance related Internships</p>
+                        <a href="https://www.ziprecruiter.com/Jobs/High-School-Finance-Intern/-in-New-York,NY" target="_blank" rel="noopener noreferrer" className="button">
+                    Internships Opportunities
+              </a>
+                         </div>
                 </div>
-                <div>
-                    <i class="fa-solid fa-computer"></i>
-                    <h2>Meetings</h2>
-                    <p>Finance Related Meetings</p>
-                    <a href="https://www.ziprecruiter.com/Jobs/High-School-Finance-Intern/-in-New-York,NY"  target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-
+                <div class="work">
+                   
+                    <div class="layer">
+                        <h3>Additional Courses </h3>
+                        <p>Finance Related courses</p>
+                        <a href="hhttps://www.khanacademy.org/college-careers-more/financial-literacy" target="_blank" rel="noopener noreferrer" className="button">
+               Meeting Opportunities
+              </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
   );
 }
-
-export default oppertunities;
