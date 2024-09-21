@@ -61,14 +61,13 @@ const Forum = () => {
 
       {/* Form for posting new questions */}
       <form className="forum-form" onSubmit={handleNewQuestion}>
-        <input
-          type="text"
+        <textarea
           placeholder="Ask a question..."
           value={newQuestion}
           onChange={(e) => setNewQuestion(e.target.value)}
           required
+          className="question-textarea"
         />
-
         {/* Dropdown for selecting a category */}
         <select
           value={newCategory}
@@ -84,7 +83,7 @@ const Forum = () => {
 
         <button type="submit">Post Question</button>
       </form>
-        
+
       {/* Displaying categories and their posts */}
       <div className="forum-posts">
         {categories.map((category) => (
@@ -158,4 +157,5 @@ const Post = ({ post, handleAddReply }) => {
 };
 
 export default Forum;
+
 
