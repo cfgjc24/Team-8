@@ -21,7 +21,8 @@ function App() {
                 <div class="work">
                   
                     <div class="layer">
-                        <h3>Tutor Info/Training</h3>
+                        <h3>Tutor Info</h3>
+                        <h4>Edit Information</h4>
                         <p></p>
                         <a href="https://www.flipcause.com/secure/your_details_more_info/MjExMTMw/152981" target="_blank" rel="noopener noreferrer" className="button">
 TUTOR TRAINING
@@ -32,6 +33,7 @@ TUTOR TRAINING
                    
                     <div class="layer">
                         <h3>Your Students</h3>
+                        <h4>Student Info</h4>
                         <p></p>
                         <a href="hhttps://www.khanacademy.org/college-careers-more/financial-literacy" target="_blank" rel="noopener noreferrer" className="button">
                STUDENTS VIEW
