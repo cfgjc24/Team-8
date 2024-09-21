@@ -1,75 +1,88 @@
-import React, { useState } from 'react';
-import './App.css';
-import logo from './profilepic.png';  
+import React, { useState, useEffect } from "react";
+import './Profile.css';
 
-const EditProfile = () => {
-    const [profile, setProfile] = useState({
-        name: '',
-        email: '',
-        bio: ''
-    });
+const Profile = () => {
+  const [profile, setProfile] = useState(null); // State to store the profile data
+  const [loading, setLoading] = useState(true); // State to track loading
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setProfile({
-            ...profile,
-            [name]: value
-        });
-    };
+  // Fetch profile data
+  useEffect(() => {
+    // still need endpoint from backend team
+    fetch("/api/userProfile", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setProfile(data);  // set the fetched profile data
+        setLoading(false); // stop loading once data is fetched
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Profile updated:', profile);
-        alert('Profile updated successfully!');
-    };
+        // if the profile is a student, fetch the associated tutor by tutor_id
+        if (data.role === "student" && data.tutor_id) {
+          fetch(`/api/tutors/${data.tutor_id}`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json"
+            }
+          })
+            .then((response) => response.json())
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching profile data:", error);
+        setLoading(false);
+      });
+  }, []);
 
-    return (
-        <div className="edit-profile-container">
-            <h2>Edit Profile</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="name">Name:</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={profile.name}
-                        onChange={handleInputChange}
-                        placeholder="Enter your name"
-                    />
-                </div>
+  if (loading) {
+    return <p>Loading profile...</p>;
+  }
 
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={profile.email}
-                        onChange={handleInputChange}
-                        placeholder="Enter your email"
-                    />
-                </div>
+  if (!profile) {
+    return <p>Error loading profile data</p>;
+  }
 
-                <div className="form-group">
-                    <label htmlFor="bio">Bio:</label>
-                    <textarea
-                        id="bio"
-                        name="bio"
-                        value={profile.bio}
-                        onChange={handleInputChange}
-                        placeholder="Bio"
-                    />
-                </div>
+  return (
+    <div className="profile-container">
+      <h1 className="profile-title">User Profile</h1>
 
-                <button type="submit">Save Changes</button>
-                <br></br>
-                <br></br>
-                <br></br>
-                <button type="button">Logout</button>
-            </form>
+      {/* Display Student Information */}
+      {profile.role === "student" && (
+        <div className="profile-card">
+          <h2>Student Information</h2>
+          <p><strong>First Name:</strong> {profile.first_name}</p>
+          <p><strong>Last Name:</strong> {profile.last_name}</p>
+          <p><strong>Email:</strong> {profile.email}</p>
+          <p><strong>Age:</strong> {profile.age}</p>
+          <p><strong>Date of Birth:</strong> {profile.dob}</p>
         </div>
-    );
+      )}
+
+      {/* Display Tutor Information */}
+      {profile.role === "tutor" && (
+        <div className="profile-card">
+          <h2>Tutor Information</h2>
+          <p><strong>First Name:</strong> {profile.first_name}</p>
+          <p><strong>Last Name:</strong> {profile.last_name}</p>
+          <p><strong>Email:</strong> {profile.email}</p>
+          <p><strong>Age:</strong> {profile.age}</p>
+        </div>
+      )}
+
+      {/* Display Admin Information */}
+      {profile.role === "admin" && (
+        <div className="profile-card">
+          <h2>Admin Information</h2>
+          <p><strong>First Name:</strong> {profile.first_name}</p>
+          <p><strong>Last Name:</strong> {profile.last_name}</p>
+          <p><strong>Email:</strong> {profile.email}</p>
+          <p><strong>Age:</strong> {profile.age}</p>
+        </div>
+      )}
+    </div>
+  );
 };
 
-export default EditProfile;
+export default Profile;
