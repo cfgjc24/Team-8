@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import ReactDOM from 'react-dom/client';
-import './style.css'; // Make sure to create this file and include the CSS
+import './AttendanceQuiz.css'; // Make sure to create this file and include the CSS
 
-function MyForm() {
+export default function AttendanceQuiz({progress, handleProgressData}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [difficult, setDifficult] = useState("");
@@ -13,6 +13,7 @@ function MyForm() {
   
   const [confidence, setConfidence] = useState("");
   const [belonging, setBelonging] = useState("");
+  //const [progress, setProgress] = useState(0);
 
   const handleChange = (event) => {
     setSchool(event.target.value);
@@ -21,8 +22,26 @@ function MyForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     alert('Thank You! Your attendance has been recorded');
+    const newProgress =progress+11
+    handleProgressData(newProgress)
+    // setProgress((prevProgress) => {
+    //     console.log(prevProgress)
+        
+    //     sendProgressNumber(newProgress)
+    //     return newProgress
+    // });
     console.log({ name, email, difficult, experience, additional, school, session, confidence, belonging });
   };
+
+//   const sendProgressNumber = (nProgress)=>{
+//     onSendProgress(nProgress);
+//   }
+
+  useEffect(()=>{
+    console.warn(progress)
+    //sendProgressNumber()    
+},[progress])
+
 
   return (
     <div className="attendance-container">
@@ -138,5 +157,5 @@ function MyForm() {
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<MyForm />);
+//const root = ReactDOM.createRoot(document.getElementById('root'));
+//root.render(<MyForm />);

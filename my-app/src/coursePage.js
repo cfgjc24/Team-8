@@ -7,7 +7,8 @@ import './calendarpage';
 import './calendarPage.css';
 
 
-export default function CoursePage() {
+
+export default function CoursePage({progress}) {
   return (
     <div className="course-container">
       {/* Navigation Bar */}
@@ -17,12 +18,26 @@ export default function CoursePage() {
           <li><Link to="/calendar" className="nav-item">Calendar</Link></li>
           <li><Link to="/oppertunities" className="nav-item">Opportunities</Link></li>
           <li><Link to="/profile" className="nav-item">Profile</Link></li>
-          <li><Link to="/profile" className="nav-item">Form</Link></li>
+          <li><Link to="/profile" className="nav-item">Forum</Link></li>
         </ul>
       </nav>
+    
 
-      {/* Main Content */}
+      {/* Progress Bar*/}
+      
       <div className="content">
+      <div style={{ width: '100%', backgroundColor: '#e0e0e0', borderRadius: '5px', marginTop: '10px' }}>
+        <div
+          style={{
+            width: `${progress}%`,
+            height: '20px',
+            backgroundColor: '#3b5998',
+            borderRadius: '5px',
+            transition: 'width 0.3s ease-in-out',
+          }}
+        />
+      </div>
+      <div style={{ marginTop: '10px' }}>{progress}</div>
         <h1>Available Lessons</h1>
         <div className="lessons-container">
           {/* Lesson 1 */}
@@ -81,6 +96,14 @@ export default function CoursePage() {
             <button className="capstone-button">Capstone Project</button>
           </a>
         </div>
+
+         {/* New Button at the Bottom */}
+         <div className="bottom-button-container">
+          <Link to="/AttendanceQuiz">
+            <button className="attendance-button">Attendance Quiz!</button>
+          </Link>
+        </div>
+
       </div>
     </div>
   );

@@ -9,11 +9,15 @@ import SignUpForm from './SignUpForm';  // Registration form component (SignUpFo
 import CoursePage from './coursePage';
 import CalendarPage from './calendarpage';
 import Oppertunities from './oppertunities';
+import AttendanceQuiz from './AttendanceQuiz';
+import { useState } from "react";
 
 
 
 // Home Page Component
 function HomePage() {
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -44,6 +48,12 @@ function HomePage() {
 
 // Main App Component with Routing
 function App() {
+  const [progress, setProgress] = useState(0);
+
+  const handleProgressData =(progressData) =>{
+    setProgress(progressData)
+    console.log(progress)
+  }
   return (
     <Router>
       <Routes>
@@ -56,13 +66,15 @@ function App() {
         {/* Route for the registration page */}
         <Route path="/register" element={<SignUpForm />} />
 
-          {/*Temporary CoursePage*/}
-          <Route path="/courses" element={<CoursePage />} />
+        {/*Temporary CoursePage*/}
+        <Route path="/courses" element={<CoursePage progress={progress} onProgressChange={handleProgressData} />} />
 
         {/*Temporary CalendarPage*/}
         <Route path="/calendar" element={<CalendarPage/>} />
 
         <Route path="/oppertunities" element={<Oppertunities/>} />
+
+        <Route path="/AttendanceQuiz" element={<AttendanceQuiz progress={progress} handleProgressData={handleProgressData}/>} />
 
       </Routes>
     </Router>

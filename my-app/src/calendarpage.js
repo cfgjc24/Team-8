@@ -13,6 +13,7 @@ export default function CalendarPage() {
           <li><Link to="/calendar" className="nav-item">Calendar</Link></li>
           <li><Link to="/opportunities" className="nav-item">Opportunities</Link></li>
           <li><Link to="/profile" className="nav-item">Profile</Link></li>
+          <li><Link to="/profile" className="nav-item">Forum</Link></li>
         </ul>
       </nav>
 
